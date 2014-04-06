@@ -24,6 +24,7 @@
 		FA432CCD18F1BDE100DC5220 /* Red_DotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */; };
 		FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CD718F1BE2000DC5220 /* MainMenuScene.m */; };
 		FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CDA18F1D97600DC5220 /* GameplayScene.m */; };
+		FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CE018F1ECC500DC5220 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FA432CD718F1BE2000DC5220 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		FA432CD918F1D97600DC5220 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
 		FA432CDA18F1D97600DC5220 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
+		FA432CE018F1ECC500DC5220 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */,
 				FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */,
 				FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */,
 				FA432CA118F1BDE100DC5220 /* SpriteKit.framework in Frameworks */,
@@ -110,6 +113,7 @@
 		FA432C9918F1BDE100DC5220 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA432CE018F1ECC500DC5220 /* CoreMotion.framework */,
 				FA432C9A18F1BDE100DC5220 /* Foundation.framework */,
 				FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */,
 				FA432C9E18F1BDE100DC5220 /* UIKit.framework */,

@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuScene.h"
+#import "GameplayScene.h"
 
 @implementation MainMenuScene
 
@@ -25,14 +26,50 @@
         _redCircle.name = @"redCircle";
         [self addChild:_redCircle];
         
+        //add the animation
+        SKAction *wait = [SKAction waitForDuration:3];
+        SKAction *animate = [SKAction runBlock:^{
+            _redCircle.fillColor = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1];
+            
+        }];
+        SKAction *animateAndWait = [SKAction sequence:@[animate, [SKAction waitForDuration:1.5]]];
+        SKAction *animateForever = [SKAction repeatActionForever:animateAndWait];
+        [_redCircle runAction:[SKAction sequence:@[wait, animateForever]]];
+        
+        
         
         //create the buttons
-        SKShapeNode *playButton = [[SKShapeNode alloc] init];
+        SKLabelNode *playLabel = [[SKLabelNode alloc] init];
+        playLabel.text = @"Play";
+        playLabel.fontColor = [UIColor blackColor];
+        SKSpriteNode *playRect = [[SKSpriteNode alloc] init];
+        playRect.size = CGSizeMake(142, 48);
+        playRect.position = CGPointMake(playRect.size.width/2+20, playRect.size.height/2+70);
+        playRect.color = [UIColor whiteColor];
+        playRect.name = @"playButton";
+        [playRect addChild:playLabel];
+        [self addChild:playRect];
         
         
         
     }
     return self;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint touchedPosition = [touch locationInNode:self];
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchedPosition];
+    
+    if ([[touchedNode name] isEqualToString:@"playButton"]) {
+        GameplayScene *gameScene = [GameplayScene sceneWithSize:self.scene.size];
+        SKTransition *transition = [SKTransition fadeWithDuration:.5];
+        [self.scene.view presentScene:gameScene transition:transition];
+        
+    }
+    
+    
 }
 
 
