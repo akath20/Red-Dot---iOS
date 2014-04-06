@@ -16,14 +16,14 @@
 		FA432CAD18F1BDE100DC5220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CAC18F1BDE100DC5220 /* AppDelegate.m */; };
 		FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA432CAE18F1BDE100DC5220 /* Main.storyboard */; };
 		FA432CB318F1BDE100DC5220 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CB218F1BDE100DC5220 /* ViewController.m */; };
-		FA432CB618F1BDE100DC5220 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CB518F1BDE100DC5220 /* MyScene.m */; };
-		FA432CB818F1BDE100DC5220 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CB718F1BDE100DC5220 /* Spaceship.png */; };
 		FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA432CB918F1BDE100DC5220 /* Images.xcassets */; };
 		FA432CC118F1BDE100DC5220 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CC018F1BDE100DC5220 /* XCTest.framework */; };
 		FA432CC218F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
 		FA432CC318F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
 		FA432CCB18F1BDE100DC5220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA432CC918F1BDE100DC5220 /* InfoPlist.strings */; };
 		FA432CCD18F1BDE100DC5220 /* Red_DotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */; };
+		FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CD718F1BE2000DC5220 /* MainMenuScene.m */; };
+		FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CDA18F1D97600DC5220 /* GameplayScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +51,16 @@
 		FA432CAF18F1BDE100DC5220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA432CB118F1BDE100DC5220 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FA432CB218F1BDE100DC5220 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FA432CB418F1BDE100DC5220 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		FA432CB518F1BDE100DC5220 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		FA432CB718F1BDE100DC5220 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		FA432CB918F1BDE100DC5220 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA432CBF18F1BDE100DC5220 /* Red DotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Red DotTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA432CC018F1BDE100DC5220 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA432CC818F1BDE100DC5220 /* Red DotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red DotTests-Info.plist"; sourceTree = "<group>"; };
 		FA432CCA18F1BDE100DC5220 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Red_DotTests.m; sourceTree = "<group>"; };
+		FA432CD618F1BE2000DC5220 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		FA432CD718F1BE2000DC5220 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		FA432CD918F1D97600DC5220 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
+		FA432CDA18F1D97600DC5220 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,14 +122,10 @@
 		FA432CA218F1BDE100DC5220 /* Red Dot */ = {
 			isa = PBXGroup;
 			children = (
-				FA432CAB18F1BDE100DC5220 /* AppDelegate.h */,
-				FA432CAC18F1BDE100DC5220 /* AppDelegate.m */,
+				FA432CDE18F1D98B00DC5220 /* App Delegate */,
 				FA432CAE18F1BDE100DC5220 /* Main.storyboard */,
-				FA432CB118F1BDE100DC5220 /* ViewController.h */,
-				FA432CB218F1BDE100DC5220 /* ViewController.m */,
-				FA432CB418F1BDE100DC5220 /* MyScene.h */,
-				FA432CB518F1BDE100DC5220 /* MyScene.m */,
-				FA432CB718F1BDE100DC5220 /* Spaceship.png */,
+				FA432CDF18F1D9A700DC5220 /* View Controller */,
+				FA432CDD18F1D98100DC5220 /* Scenes */,
 				FA432CB918F1BDE100DC5220 /* Images.xcassets */,
 				FA432CA318F1BDE100DC5220 /* Supporting Files */,
 			);
@@ -162,6 +159,35 @@
 				FA432CC918F1BDE100DC5220 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA432CDD18F1D98100DC5220 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CD618F1BE2000DC5220 /* MainMenuScene.h */,
+				FA432CD718F1BE2000DC5220 /* MainMenuScene.m */,
+				FA432CD918F1D97600DC5220 /* GameplayScene.h */,
+				FA432CDA18F1D97600DC5220 /* GameplayScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		FA432CDE18F1D98B00DC5220 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CAB18F1BDE100DC5220 /* AppDelegate.h */,
+				FA432CAC18F1BDE100DC5220 /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		FA432CDF18F1D9A700DC5220 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CB118F1BDE100DC5220 /* ViewController.h */,
+				FA432CB218F1BDE100DC5220 /* ViewController.m */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +268,6 @@
 			files = (
 				FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */,
 				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
-				FA432CB818F1BDE100DC5220 /* Spaceship.png in Resources */,
 				FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA432CB618F1BDE100DC5220 /* MyScene.m in Sources */,
 				FA432CB318F1BDE100DC5220 /* ViewController.m in Sources */,
 				FA432CAD18F1BDE100DC5220 /* AppDelegate.m in Sources */,
+				FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */,
+				FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */,
 				FA432CA918F1BDE100DC5220 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
