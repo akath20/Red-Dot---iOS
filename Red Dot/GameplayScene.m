@@ -34,9 +34,13 @@
         backButton.name = @"backButton";
         [self addChild:backButton];
         
+        //here is the bottem button location
+        CGPoint *bottomPoint = CGPointMake(CGRectGetMidX(self.frame), _startButton.size.height/2+40);
+        
         //create the start button
         SKTexture *startTexture = [SKTexture textureWithImageNamed:@"Start-Button.png"];
         _startButton = [SKSpriteNode spriteNodeWithTexture:startTexture];
+        _startButton.position = bottomPoint;
         _startButton.name = @"startButton";
         [self addChild:_startButton];
         
@@ -51,6 +55,7 @@
         //create the it's red button
         SKTexture *itsRedButtonTexture = [SKTexture textureWithImageNamed:@"Its-Red-Button.png"];
         _itsRedButton = [SKSpriteNode spriteNodeWithTexture:itsRedButtonTexture];
+        _itsRedButton.position = bottomPoint;
         _itsRedButton.name = @"itsRedButton";
         
         
@@ -137,7 +142,7 @@
     
     //change the buttons
     
-
+    
      
      
      
