@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA432C9B18F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
+		FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */; };
+		FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
+		FA432CA118F1BDE100DC5220 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CA018F1BDE100DC5220 /* SpriteKit.framework */; };
+		FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA432CA518F1BDE100DC5220 /* InfoPlist.strings */; };
+		FA432CA918F1BDE100DC5220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CA818F1BDE100DC5220 /* main.m */; };
+		FA432CAD18F1BDE100DC5220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CAC18F1BDE100DC5220 /* AppDelegate.m */; };
+		FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA432CAE18F1BDE100DC5220 /* Main.storyboard */; };
+		FA432CB318F1BDE100DC5220 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CB218F1BDE100DC5220 /* ViewController.m */; };
+		FA432CB618F1BDE100DC5220 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CB518F1BDE100DC5220 /* MyScene.m */; };
+		FA432CB818F1BDE100DC5220 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CB718F1BDE100DC5220 /* Spaceship.png */; };
+		FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA432CB918F1BDE100DC5220 /* Images.xcassets */; };
+		FA432CC118F1BDE100DC5220 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CC018F1BDE100DC5220 /* XCTest.framework */; };
+		FA432CC218F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
+		FA432CC318F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
+		FA432CCB18F1BDE100DC5220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA432CC918F1BDE100DC5220 /* InfoPlist.strings */; };
+		FA432CCD18F1BDE100DC5220 /* Red_DotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA432CC418F1BDE100DC5220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA432C8F18F1BDE100DC5220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA432C9618F1BDE100DC5220;
+			remoteInfo = "Red Dot";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA432C9718F1BDE100DC5220 /* Red Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA432C9A18F1BDE100DC5220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA432C9E18F1BDE100DC5220 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA432CA018F1BDE100DC5220 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		FA432CA418F1BDE100DC5220 /* Red Dot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red Dot-Info.plist"; sourceTree = "<group>"; };
+		FA432CA618F1BDE100DC5220 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA432CA818F1BDE100DC5220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA432CAA18F1BDE100DC5220 /* Red Dot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Red Dot-Prefix.pch"; sourceTree = "<group>"; };
+		FA432CAB18F1BDE100DC5220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA432CAC18F1BDE100DC5220 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FA432CAF18F1BDE100DC5220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA432CB118F1BDE100DC5220 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FA432CB218F1BDE100DC5220 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FA432CB418F1BDE100DC5220 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		FA432CB518F1BDE100DC5220 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		FA432CB718F1BDE100DC5220 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		FA432CB918F1BDE100DC5220 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA432CBF18F1BDE100DC5220 /* Red DotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Red DotTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA432CC018F1BDE100DC5220 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FA432CC818F1BDE100DC5220 /* Red DotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red DotTests-Info.plist"; sourceTree = "<group>"; };
+		FA432CCA18F1BDE100DC5220 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Red_DotTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA432C9418F1BDE100DC5220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */,
+				FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */,
+				FA432CA118F1BDE100DC5220 /* SpriteKit.framework in Frameworks */,
+				FA432C9B18F1BDE100DC5220 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA432CBC18F1BDE100DC5220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA432CC118F1BDE100DC5220 /* XCTest.framework in Frameworks */,
+				FA432CC318F1BDE100DC5220 /* UIKit.framework in Frameworks */,
+				FA432CC218F1BDE100DC5220 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA432C8E18F1BDE100DC5220 = {
+			isa = PBXGroup;
+			children = (
+				FA432CA218F1BDE100DC5220 /* Red Dot */,
+				FA432CC618F1BDE100DC5220 /* Red DotTests */,
+				FA432C9918F1BDE100DC5220 /* Frameworks */,
+				FA432C9818F1BDE100DC5220 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA432C9818F1BDE100DC5220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA432C9718F1BDE100DC5220 /* Red Dot.app */,
+				FA432CBF18F1BDE100DC5220 /* Red DotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA432C9918F1BDE100DC5220 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA432C9A18F1BDE100DC5220 /* Foundation.framework */,
+				FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */,
+				FA432C9E18F1BDE100DC5220 /* UIKit.framework */,
+				FA432CA018F1BDE100DC5220 /* SpriteKit.framework */,
+				FA432CC018F1BDE100DC5220 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA432CA218F1BDE100DC5220 /* Red Dot */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CAB18F1BDE100DC5220 /* AppDelegate.h */,
+				FA432CAC18F1BDE100DC5220 /* AppDelegate.m */,
+				FA432CAE18F1BDE100DC5220 /* Main.storyboard */,
+				FA432CB118F1BDE100DC5220 /* ViewController.h */,
+				FA432CB218F1BDE100DC5220 /* ViewController.m */,
+				FA432CB418F1BDE100DC5220 /* MyScene.h */,
+				FA432CB518F1BDE100DC5220 /* MyScene.m */,
+				FA432CB718F1BDE100DC5220 /* Spaceship.png */,
+				FA432CB918F1BDE100DC5220 /* Images.xcassets */,
+				FA432CA318F1BDE100DC5220 /* Supporting Files */,
+			);
+			path = "Red Dot";
+			sourceTree = "<group>";
+		};
+		FA432CA318F1BDE100DC5220 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CA418F1BDE100DC5220 /* Red Dot-Info.plist */,
+				FA432CA518F1BDE100DC5220 /* InfoPlist.strings */,
+				FA432CA818F1BDE100DC5220 /* main.m */,
+				FA432CAA18F1BDE100DC5220 /* Red Dot-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA432CC618F1BDE100DC5220 /* Red DotTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */,
+				FA432CC718F1BDE100DC5220 /* Supporting Files */,
+			);
+			path = "Red DotTests";
+			sourceTree = "<group>";
+		};
+		FA432CC718F1BDE100DC5220 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CC818F1BDE100DC5220 /* Red DotTests-Info.plist */,
+				FA432CC918F1BDE100DC5220 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA432C9618F1BDE100DC5220 /* Red Dot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA432CD018F1BDE100DC5220 /* Build configuration list for PBXNativeTarget "Red Dot" */;
+			buildPhases = (
+				FA432C9318F1BDE100DC5220 /* Sources */,
+				FA432C9418F1BDE100DC5220 /* Frameworks */,
+				FA432C9518F1BDE100DC5220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Red Dot";
+			productName = "Red Dot";
+			productReference = FA432C9718F1BDE100DC5220 /* Red Dot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA432CBE18F1BDE100DC5220 /* Red DotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA432CD318F1BDE100DC5220 /* Build configuration list for PBXNativeTarget "Red DotTests" */;
+			buildPhases = (
+				FA432CBB18F1BDE100DC5220 /* Sources */,
+				FA432CBC18F1BDE100DC5220 /* Frameworks */,
+				FA432CBD18F1BDE100DC5220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA432CC518F1BDE100DC5220 /* PBXTargetDependency */,
+			);
+			name = "Red DotTests";
+			productName = "Red DotTests";
+			productReference = FA432CBF18F1BDE100DC5220 /* Red DotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA432C8F18F1BDE100DC5220 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Alex Atwater";
+				TargetAttributes = {
+					FA432CBE18F1BDE100DC5220 = {
+						TestTargetID = FA432C9618F1BDE100DC5220;
+					};
+				};
+			};
+			buildConfigurationList = FA432C9218F1BDE100DC5220 /* Build configuration list for PBXProject "Red Dot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA432C8E18F1BDE100DC5220;
+			productRefGroup = FA432C9818F1BDE100DC5220 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA432C9618F1BDE100DC5220 /* Red Dot */,
+				FA432CBE18F1BDE100DC5220 /* Red DotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA432C9518F1BDE100DC5220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */,
+				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
+				FA432CB818F1BDE100DC5220 /* Spaceship.png in Resources */,
+				FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA432CBD18F1BDE100DC5220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA432CCB18F1BDE100DC5220 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA432C9318F1BDE100DC5220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA432CB618F1BDE100DC5220 /* MyScene.m in Sources */,
+				FA432CB318F1BDE100DC5220 /* ViewController.m in Sources */,
+				FA432CAD18F1BDE100DC5220 /* AppDelegate.m in Sources */,
+				FA432CA918F1BDE100DC5220 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA432CBB18F1BDE100DC5220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA432CCD18F1BDE100DC5220 /* Red_DotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA432CC518F1BDE100DC5220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA432C9618F1BDE100DC5220 /* Red Dot */;
+			targetProxy = FA432CC418F1BDE100DC5220 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA432CA518F1BDE100DC5220 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA432CA618F1BDE100DC5220 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA432CAE18F1BDE100DC5220 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA432CAF18F1BDE100DC5220 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA432CC918F1BDE100DC5220 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA432CCA18F1BDE100DC5220 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA432CCE18F1BDE100DC5220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA432CCF18F1BDE100DC5220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA432CD118F1BDE100DC5220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red Dot/Red Dot-Prefix.pch";
+				INFOPLIST_FILE = "Red Dot/Red Dot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA432CD218F1BDE100DC5220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red Dot/Red Dot-Prefix.pch";
+				INFOPLIST_FILE = "Red Dot/Red Dot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FA432CD418F1BDE100DC5220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Red Dot.app/Red Dot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red Dot/Red Dot-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Red DotTests/Red DotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FA432CD518F1BDE100DC5220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Red Dot.app/Red Dot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red Dot/Red Dot-Prefix.pch";
+				INFOPLIST_FILE = "Red DotTests/Red DotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA432C9218F1BDE100DC5220 /* Build configuration list for PBXProject "Red Dot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA432CCE18F1BDE100DC5220 /* Debug */,
+				FA432CCF18F1BDE100DC5220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA432CD018F1BDE100DC5220 /* Build configuration list for PBXNativeTarget "Red Dot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA432CD118F1BDE100DC5220 /* Debug */,
+				FA432CD218F1BDE100DC5220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA432CD318F1BDE100DC5220 /* Build configuration list for PBXNativeTarget "Red DotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA432CD418F1BDE100DC5220 /* Debug */,
+				FA432CD518F1BDE100DC5220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA432C8F18F1BDE100DC5220 /* Project object */;
+}
