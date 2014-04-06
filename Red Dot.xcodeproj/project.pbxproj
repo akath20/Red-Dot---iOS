@@ -28,6 +28,7 @@
 		FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE418F1F3B400DC5220 /* Play-Button.png */; };
 		FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE618F1F74900DC5220 /* Back-Button.png */; };
 		FA432CEB18F1FADF00DC5220 /* Start-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CEA18F1FADF00DC5220 /* Start-Button.png */; };
+		FA432CED18F20D7C00DC5220 /* Its-Red-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CEC18F20D7C00DC5220 /* Its-Red-Button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		FA432CE418F1F3B400DC5220 /* Play-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-Button.png"; path = "../../Archives/Red Dot/Play-Button.png"; sourceTree = "<group>"; };
 		FA432CE618F1F74900DC5220 /* Back-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Button.png"; path = "../../Archives/Red Dot/Back-Button.png"; sourceTree = "<group>"; };
 		FA432CEA18F1FADF00DC5220 /* Start-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Start-Button.png"; path = "../../Archives/Red Dot/Start-Button.png"; sourceTree = "<group>"; };
+		FA432CEC18F20D7C00DC5220 /* Its-Red-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Its-Red-Button.png"; path = "../../Archives/Red Dot/Its-Red-Button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 		FA432CE318F1F3A100DC5220 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				FA432CEC18F20D7C00DC5220 /* Its-Red-Button.png */,
 				FA432CEA18F1FADF00DC5220 /* Start-Button.png */,
 				FA432CE618F1F74900DC5220 /* Back-Button.png */,
 				FA432CE418F1F3B400DC5220 /* Play-Button.png */,
@@ -299,6 +302,7 @@
 				FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */,
 				FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */,
 				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
+				FA432CED18F20D7C00DC5220 /* Its-Red-Button.png in Resources */,
 				FA432CEB18F1FADF00DC5220 /* Start-Button.png in Resources */,
 				FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */,
 			);

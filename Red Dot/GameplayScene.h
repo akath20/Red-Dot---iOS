@@ -12,5 +12,9 @@
 
 @property SKShapeNode *redCircle;
 @property SKSpriteNode *startButton;
+@property BOOL currentlyPlaying;
+@property SKLabelNode *timerLabel;
+@property float timer;
+@property SKSpriteNode *itsRedButton;
 
 @end
