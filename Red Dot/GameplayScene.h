@@ -11,5 +11,6 @@
 @interface GameplayScene : SKScene
 
 @property SKShapeNode *redCircle;
+@property SKSpriteNode *startButton;
 
 @end

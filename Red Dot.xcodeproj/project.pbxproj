@@ -26,6 +26,8 @@
 		FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CDA18F1D97600DC5220 /* GameplayScene.m */; };
 		FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CE018F1ECC500DC5220 /* CoreMotion.framework */; };
 		FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE418F1F3B400DC5220 /* Play-Button.png */; };
+		FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE618F1F74900DC5220 /* Back-Button.png */; };
+		FA432CEB18F1FADF00DC5220 /* Start-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CEA18F1FADF00DC5220 /* Start-Button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		FA432CDA18F1D97600DC5220 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
 		FA432CE018F1ECC500DC5220 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		FA432CE418F1F3B400DC5220 /* Play-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-Button.png"; path = "../../Archives/Red Dot/Play-Button.png"; sourceTree = "<group>"; };
+		FA432CE618F1F74900DC5220 /* Back-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Button.png"; path = "../../Archives/Red Dot/Back-Button.png"; sourceTree = "<group>"; };
+		FA432CEA18F1FADF00DC5220 /* Start-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Start-Button.png"; path = "../../Archives/Red Dot/Start-Button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 		FA432CE318F1F3A100DC5220 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				FA432CEA18F1FADF00DC5220 /* Start-Button.png */,
+				FA432CE618F1F74900DC5220 /* Back-Button.png */,
 				FA432CE418F1F3B400DC5220 /* Play-Button.png */,
 			);
 			name = Buttons;
@@ -290,8 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */,
+				FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */,
 				FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */,
 				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
+				FA432CEB18F1FADF00DC5220 /* Start-Button.png in Resources */,
 				FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

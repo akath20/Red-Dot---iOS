@@ -7,6 +7,7 @@
 //
 
 #import "GameplayScene.h"
+#import "MainMenuScene.h"
 
 @implementation GameplayScene
 
@@ -26,7 +27,16 @@
         [self addChild:_redCircle];
         
         
-        //create the
+        //create the back button
+        SKTexture *backButtonTexture = [SKTexture textureWithImageNamed:@"Back-Button"];
+        SKSpriteNode *backButton = [SKSpriteNode spriteNodeWithTexture:backButtonTexture];
+        [backButton setScale:.4];
+        backButton.position = CGPointMake(backButton.size.width/2+10, (self.scene.frame.size.height-(backButton.size.height/2))-30);
+        backButton.name = @"backButton";
+        [self addChild:backButton];
+        
+        //create the start button
+        
         
         
         
@@ -45,8 +55,15 @@
         
         _redCircle.fillColor = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1];
         
+    } else if ([[touchedNode name] isEqualToString:@"backButton"]) {
+        
+        MainMenuScene *mainMenu = [MainMenuScene sceneWithSize:self.scene.size];
+        SKTransition *transition = [SKTransition fadeWithDuration:.5];
+        [self.scene.view presentScene:mainMenu transition:transition];
         
     }
+    
+    
     
     
 }

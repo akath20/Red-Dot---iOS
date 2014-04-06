@@ -39,16 +39,12 @@
         
         
         //create the buttons
-        SKLabelNode *playLabel = [[SKLabelNode alloc] init];
-        playLabel.text = @"Play";
-        playLabel.fontColor = [UIColor blackColor];
-        SKSpriteNode *playRect = [[SKSpriteNode alloc] init];
-        playRect.size = CGSizeMake(142, 48);
-        playRect.position = CGPointMake(playRect.size.width/2+20, playRect.size.height/2+70);
-        playRect.color = [UIColor whiteColor];
-        playRect.name = @"playButton";
-        [playRect addChild:playLabel];
-        [self addChild:playRect];
+        SKTexture *playButton = [SKTexture textureWithImageNamed:@"Play-Button.png"];
+        SKSpriteNode *playButtonNode = [SKSpriteNode spriteNodeWithTexture:playButton];
+        playButtonNode.name = @"playButtonNode";
+        [playButtonNode setScale:.6];
+        playButtonNode.position = CGPointMake(CGRectGetMidX(self.frame), playButtonNode.size.height/2+80);
+        [self addChild:playButtonNode];
         
         
         
@@ -61,9 +57,8 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchedPosition = [touch locationInNode:self];
     SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchedPosition];
-    NSLog(@"\nTouched Node: %@", touchedNode.name);
     
-    if ([[touchedNode name] isEqualToString:@"playButton"] || [[touchedNode name] isEqualToString:@"Play"]) {
+    if ([[touchedNode name] isEqualToString:@"playButtonNode"]) {
         GameplayScene *gameScene = [GameplayScene sceneWithSize:self.scene.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
         [self.scene.view presentScene:gameScene transition:transition];
