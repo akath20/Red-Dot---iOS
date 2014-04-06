@@ -61,8 +61,9 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchedPosition = [touch locationInNode:self];
     SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchedPosition];
+    NSLog(@"\nTouched Node: %@", touchedNode.name);
     
-    if ([[touchedNode name] isEqualToString:@"playButton"]) {
+    if ([[touchedNode name] isEqualToString:@"playButton"] || [[touchedNode name] isEqualToString:@"Play"]) {
         GameplayScene *gameScene = [GameplayScene sceneWithSize:self.scene.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
         [self.scene.view presentScene:gameScene transition:transition];

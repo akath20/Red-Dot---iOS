@@ -25,6 +25,7 @@
 		FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CD718F1BE2000DC5220 /* MainMenuScene.m */; };
 		FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CDA18F1D97600DC5220 /* GameplayScene.m */; };
 		FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CE018F1ECC500DC5220 /* CoreMotion.framework */; };
+		FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE418F1F3B400DC5220 /* Play-Button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		FA432CD918F1D97600DC5220 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
 		FA432CDA18F1D97600DC5220 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
 		FA432CE018F1ECC500DC5220 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		FA432CE418F1F3B400DC5220 /* Play-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-Button.png"; path = "../../Archives/Red Dot/Play-Button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		FA432CA318F1BDE100DC5220 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA432CE218F1F39A00DC5220 /* Images */,
 				FA432CA418F1BDE100DC5220 /* Red Dot-Info.plist */,
 				FA432CA518F1BDE100DC5220 /* InfoPlist.strings */,
 				FA432CA818F1BDE100DC5220 /* main.m */,
@@ -192,6 +195,22 @@
 				FA432CB218F1BDE100DC5220 /* ViewController.m */,
 			);
 			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		FA432CE218F1F39A00DC5220 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CE318F1F3A100DC5220 /* Buttons */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		FA432CE318F1F3A100DC5220 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CE418F1F3B400DC5220 /* Play-Button.png */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */,
+				FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */,
 				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
 				FA432CB018F1BDE100DC5220 /* Main.storyboard in Resources */,
 			);
