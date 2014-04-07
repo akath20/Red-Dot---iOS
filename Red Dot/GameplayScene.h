@@ -21,5 +21,6 @@
 @property BOOL userStart;
 @property SKSpriteNode *playAgainButton;
 @property SKLabelNode *tapToBegin;
+@property SKSpriteNode *restartButton;
 
 @end

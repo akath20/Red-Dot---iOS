@@ -20,7 +20,7 @@
         //create the red dot
         CGRect circle = CGRectMake(0, 0, 120.0, 120.0);
         _redCircle = [[SKShapeNode alloc] init];
-        _redCircle.position = CGPointMake(size.width/2-circle.size.width/2, size.height/2+40);
+        _redCircle.position = CGPointMake(size.width/2-circle.size.width/2, size.height/2);
         _redCircle.path = [UIBezierPath bezierPathWithOvalInRect:circle].CGPath;
         _redCircle.fillColor = [UIColor redColor];
         _redCircle.name = @"redCircle";
@@ -52,11 +52,11 @@
         _timer = 0.000;
         _timerLabel.text = [NSString stringWithFormat:@"%.2f", _timer];
         _timerLabel.fontColor = [UIColor blackColor];
-        _timerLabel.position = CGPointMake(CGRectGetMidX(self.frame)+50, (_redCircle.position.y+circle.size.height)+20);
+        _timerLabel.position = CGPointMake(CGRectGetMidX(self.frame)+50, (_redCircle.position.y+circle.size.height)+40);
         _timerTextLabel = [[SKLabelNode alloc] init];
         _timerTextLabel.text = @"Timer:";
         _timerTextLabel.fontColor = [UIColor blackColor];
-        _timerTextLabel.position = CGPointMake(CGRectGetMidX(self.frame)-50, (_redCircle.position.y+circle.size.height)+20);
+        _timerTextLabel.position = CGPointMake(CGRectGetMidX(self.frame)-50, (_redCircle.position.y+circle.size.height)+40);
         
         
         //create the it's red button
@@ -82,14 +82,23 @@
         _tapToBegin.position = bottomPoint;
         
         
+        //create the restart button
+        SKTexture *restartButtonTexture = [SKTexture textureWithImageNamed:@"Restart-Button.png"];
+        _restartButton = [SKSpriteNode spriteNodeWithTexture:restartButtonTexture];
+        [self.restartButton setScale:.4];
+        _restartButton.position = CGPointMake((self.scene.frame.size.width-(self.restartButton.size.width/2))-10, (self.scene.frame.size.height-(self.restartButton.size.height/2))-30);
+        _restartButton.name = @"restartButton";
         
         
+        
+        //other variables
         _currentlyPlaying = false;
         _endOfGame = false;
         _userStart = false;
         
         
     }
+    
     return self;
 }
 
@@ -132,7 +141,6 @@
         
     } else if ([[touchedNode name] isEqualToString:@"playAgainButton"]) {
         
-        
         //remove button
         [_playAgainButton removeFromParent];
         [_timerLabel removeFromParent];
@@ -140,6 +148,11 @@
         
         //setup the game again
         [self setupGame];
+        
+    } else if ([[touchedNode name] isEqualToString:@"restartButton"]) {
+        
+        [self restartGame];
+        
     }
     
     
@@ -189,9 +202,26 @@
     //put the ending button in
     [self addChild:_itsRedButton];
     [_tapToBegin removeFromParent];
+    [self addChild:_restartButton];
     
     
      
+}
+
+- (void)restartGame {
+    
+    [_restartButton removeFromParent];
+    [_timerLabel removeFromParent];
+    [_timerTextLabel removeFromParent];
+    [_itsRedButton removeFromParent];
+    
+    //stop the timer
+    [_timerLabel removeActionForKey:@"timer"];
+    
+    [self setupGame];
+    
+    
+    
 }
 
 - (void)endGame {
@@ -213,6 +243,7 @@
     //get ready to go again
     [_itsRedButton removeFromParent];
     [self addChild:_playAgainButton];
+    [_restartButton removeFromParent];
     
     
     

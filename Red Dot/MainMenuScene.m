@@ -20,7 +20,7 @@
         //create the red dot
         CGRect circle = CGRectMake(0, 0, 120.0, 120.0);
         _redCircle = [[SKShapeNode alloc] init];
-        _redCircle.position = CGPointMake(size.width/2-circle.size.width/2, size.height/2+40);
+        _redCircle.position = CGPointMake(size.width/2-circle.size.width/2, size.height/2);
         _redCircle.path = [UIBezierPath bezierPathWithOvalInRect:circle].CGPath;
         _redCircle.fillColor = [UIColor redColor];
         _redCircle.name = @"redCircle";
