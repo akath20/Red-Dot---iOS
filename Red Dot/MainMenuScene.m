@@ -43,7 +43,7 @@
         SKSpriteNode *playButtonNode = [SKSpriteNode spriteNodeWithTexture:playButton];
         playButtonNode.name = @"playButtonNode";
         [playButtonNode setScale:.6];
-        playButtonNode.position = CGPointMake(CGRectGetMidX(self.frame), playButtonNode.size.height/2+80);
+        playButtonNode.position = CGPointMake(CGRectGetMidX(self.frame), playButtonNode.size.height/2+120);
         [self addChild:playButtonNode];
         
         
