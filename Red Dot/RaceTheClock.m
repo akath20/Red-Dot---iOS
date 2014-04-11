@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Alex Atwater. All rights reserved.
 //
 
-#import "GameplayScene.h"
+#import "RaceTheClock.h"
 #import "MainMenuScene.h"
 #import "SharedValues.h"
 
-@implementation GameplayScene
+@implementation RaceTheClock
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -283,6 +283,7 @@
         
         
     } else {
+        
         //if an invalid score
         
         _statusLabel.text = @"That's not red! Time not recorded.";

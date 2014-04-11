@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameplayScene : SKScene
+@interface RaceTheClock : SKScene
 
 @property SKShapeNode *redCircle;
 @property SKSpriteNode *startButton;

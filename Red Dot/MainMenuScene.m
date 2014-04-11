@@ -7,8 +7,9 @@
 //
 
 #import "MainMenuScene.h"
-#import "GameplayScene.h"
+#import "GameModeScene.h"
 #import "SharedValues.h"
+#import "SettingsScene.h"
 
 @implementation MainMenuScene
 
@@ -48,6 +49,15 @@
         [self addChild:playButtonNode];
         
         
+        //create the settings button
+        SKTexture *settings = [SKTexture textureWithImageNamed:@"Settings.png"];
+        SKSpriteNode *settingsButtonNode = [SKSpriteNode spriteNodeWithTexture:settings];
+        settingsButtonNode.name = @"settingsButtonNode";
+        [settingsButtonNode setScale:.6];
+        settingsButtonNode.position = CGPointMake(settingsButtonNode.size.width/2+10, (self.scene.frame.size.height-(settingsButtonNode.size.height/2))-30);
+        [self addChild:settingsButtonNode];
+        
+        
         
     }
     return self;
@@ -60,9 +70,17 @@
     SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchedPosition];
     
     if ([[touchedNode name] isEqualToString:@"playButtonNode"]) {
-        GameplayScene *gameScene = [GameplayScene sceneWithSize:self.scene.size];
+        
+        GameModeScene *gameModeScene = [GameModeScene sceneWithSize:self.scene.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
-        [self.scene.view presentScene:gameScene transition:transition];
+        [self.scene.view presentScene:gameModeScene transition:transition];
+        
+    } else if ([[touchedNode name] isEqualToString:@"settingsButtonNode"]) {
+        
+        SettingsScene *settingsScene = [SettingsScene sceneWithSize:self.scene.size];
+        SKTransition *transition = [SKTransition fadeWithDuration:.5];
+        [self.scene.view presentScene:settingsScene transition:transition];
+        
         
     }
     

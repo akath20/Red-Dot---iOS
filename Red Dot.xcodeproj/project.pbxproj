@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FA24565218F88DE0003544E3 /* SharedValues.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24565118F88DE0003544E3 /* SharedValues.m */; };
+		FA24565618F8A8E2003544E3 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24565518F8A8E2003544E3 /* Settings.png */; };
+		FA24565918F8AA60003544E3 /* SettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24565818F8AA60003544E3 /* SettingsScene.m */; };
+		FA24565B18F8AF91003544E3 /* Race The Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24565A18F8AF91003544E3 /* Race The Clock.png */; };
+		FA24565E18F8B098003544E3 /* GameModeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24565D18F8B098003544E3 /* GameModeScene.m */; };
 		FA432C9B18F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
 		FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */; };
 		FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
@@ -24,7 +28,7 @@
 		FA432CCB18F1BDE100DC5220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA432CC918F1BDE100DC5220 /* InfoPlist.strings */; };
 		FA432CCD18F1BDE100DC5220 /* Red_DotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */; };
 		FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CD718F1BE2000DC5220 /* MainMenuScene.m */; };
-		FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CDA18F1D97600DC5220 /* GameplayScene.m */; };
+		FA432CDB18F1D97600DC5220 /* RaceTheClock.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432CDA18F1D97600DC5220 /* RaceTheClock.m */; };
 		FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432CE018F1ECC500DC5220 /* CoreMotion.framework */; };
 		FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE418F1F3B400DC5220 /* Play-Button.png */; };
 		FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA432CE618F1F74900DC5220 /* Back-Button.png */; };
@@ -47,6 +51,12 @@
 /* Begin PBXFileReference section */
 		FA24565018F88DE0003544E3 /* SharedValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedValues.h; sourceTree = "<group>"; };
 		FA24565118F88DE0003544E3 /* SharedValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedValues.m; sourceTree = "<group>"; };
+		FA24565518F8A8E2003544E3 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		FA24565718F8AA60003544E3 /* SettingsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScene.h; sourceTree = "<group>"; };
+		FA24565818F8AA60003544E3 /* SettingsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsScene.m; sourceTree = "<group>"; };
+		FA24565A18F8AF91003544E3 /* Race The Clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Race The Clock.png"; sourceTree = "<group>"; };
+		FA24565C18F8B098003544E3 /* GameModeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeScene.h; sourceTree = "<group>"; };
+		FA24565D18F8B098003544E3 /* GameModeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeScene.m; sourceTree = "<group>"; };
 		FA432C9718F1BDE100DC5220 /* Red Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA432C9A18F1BDE100DC5220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +79,8 @@
 		FA432CCC18F1BDE100DC5220 /* Red_DotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Red_DotTests.m; sourceTree = "<group>"; };
 		FA432CD618F1BE2000DC5220 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		FA432CD718F1BE2000DC5220 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
-		FA432CD918F1D97600DC5220 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
-		FA432CDA18F1D97600DC5220 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
+		FA432CD918F1D97600DC5220 /* RaceTheClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTheClock.h; sourceTree = "<group>"; };
+		FA432CDA18F1D97600DC5220 /* RaceTheClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTheClock.m; sourceTree = "<group>"; };
 		FA432CE018F1ECC500DC5220 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		FA432CE418F1F3B400DC5220 /* Play-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-Button.png"; path = "../../Archives/Red Dot/Play-Button.png"; sourceTree = "<group>"; };
 		FA432CE618F1F74900DC5220 /* Back-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Button.png"; path = "../../Archives/Red Dot/Back-Button.png"; sourceTree = "<group>"; };
@@ -113,6 +123,28 @@
 				FA24565118F88DE0003544E3 /* SharedValues.m */,
 			);
 			name = SharedValues;
+			sourceTree = "<group>";
+		};
+		FA24565F18F8B0AD003544E3 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CD618F1BE2000DC5220 /* MainMenuScene.h */,
+				FA432CD718F1BE2000DC5220 /* MainMenuScene.m */,
+				FA24565718F8AA60003544E3 /* SettingsScene.h */,
+				FA24565818F8AA60003544E3 /* SettingsScene.m */,
+				FA24565C18F8B098003544E3 /* GameModeScene.h */,
+				FA24565D18F8B098003544E3 /* GameModeScene.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		FA24566018F8B0B7003544E3 /* Game Modes */ = {
+			isa = PBXGroup;
+			children = (
+				FA432CD918F1D97600DC5220 /* RaceTheClock.h */,
+				FA432CDA18F1D97600DC5220 /* RaceTheClock.m */,
+			);
+			name = "Game Modes";
 			sourceTree = "<group>";
 		};
 		FA432C8E18F1BDE100DC5220 = {
@@ -194,10 +226,8 @@
 		FA432CDD18F1D98100DC5220 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				FA432CD618F1BE2000DC5220 /* MainMenuScene.h */,
-				FA432CD718F1BE2000DC5220 /* MainMenuScene.m */,
-				FA432CD918F1D97600DC5220 /* GameplayScene.h */,
-				FA432CDA18F1D97600DC5220 /* GameplayScene.m */,
+				FA24565F18F8B0AD003544E3 /* Navigation */,
+				FA24566018F8B0B7003544E3 /* Game Modes */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -231,6 +261,8 @@
 		FA432CE318F1F3A100DC5220 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				FA24565A18F8AF91003544E3 /* Race The Clock.png */,
+				FA24565518F8A8E2003544E3 /* Settings.png */,
 				FA432CF218F22E2600DC5220 /* Restart-Button.png */,
 				FA432CEE18F21B9C00DC5220 /* Play-Again.png */,
 				FA432CEC18F20D7C00DC5220 /* Its-Red-Button.png */,
@@ -317,9 +349,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA24565618F8A8E2003544E3 /* Settings.png in Resources */,
 				FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */,
 				FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */,
 				FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */,
+				FA24565B18F8AF91003544E3 /* Race The Clock.png in Resources */,
 				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
 				FA432CEF18F21B9C00DC5220 /* Play-Again.png in Resources */,
 				FA432CF318F22E2600DC5220 /* Restart-Button.png in Resources */,
@@ -346,10 +380,12 @@
 			files = (
 				FA432CB318F1BDE100DC5220 /* ViewController.m in Sources */,
 				FA432CAD18F1BDE100DC5220 /* AppDelegate.m in Sources */,
-				FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */,
+				FA432CDB18F1D97600DC5220 /* RaceTheClock.m in Sources */,
 				FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */,
+				FA24565918F8AA60003544E3 /* SettingsScene.m in Sources */,
 				FA24565218F88DE0003544E3 /* SharedValues.m in Sources */,
 				FA432CA918F1BDE100DC5220 /* main.m in Sources */,
+				FA24565E18F8B098003544E3 /* GameModeScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
