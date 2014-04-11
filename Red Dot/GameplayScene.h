@@ -22,5 +22,7 @@
 @property SKSpriteNode *playAgainButton;
 @property SKLabelNode *tapToBegin;
 @property SKSpriteNode *restartButton;
+@property (strong, nonatomic) NSTimer *stopWatchTimer; 
+@property (strong, nonatomic) NSDate *startDate;
 
 @end
