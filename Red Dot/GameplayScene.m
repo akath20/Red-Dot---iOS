@@ -49,14 +49,12 @@
         
         //create the timer
         _timerLabel = [[SKLabelNode alloc] init];
-        _timer = 0.000;
-        _timerLabel.text = [NSString stringWithFormat:@"%.2f", _timer];
         _timerLabel.fontColor = [UIColor blackColor];
-        _timerLabel.position = CGPointMake(CGRectGetMidX(self.frame)+50, (_redCircle.position.y+circle.size.height)+40);
+        _timerLabel.position = CGPointMake(CGRectGetMidX(self.frame)+70, (_redCircle.position.y+circle.size.height)+40);
         _timerTextLabel = [[SKLabelNode alloc] init];
         _timerTextLabel.text = @"Timer:";
         _timerTextLabel.fontColor = [UIColor blackColor];
-        _timerTextLabel.position = CGPointMake(CGRectGetMidX(self.frame)-50, (_redCircle.position.y+circle.size.height)+40);
+        _timerTextLabel.position = CGPointMake(CGRectGetMidX(self.frame)-70, (_redCircle.position.y+circle.size.height)+40);
         
         
         //create the it's red button
@@ -172,16 +170,16 @@
     _userStart = true;
     _redCircle.fillColor = [UIColor redColor];
     
-    if (_timer != 0.00) {
-        _timer = 0.00;
-    }
     
-    _timerLabel.text = [NSString stringWithFormat:@"%.2f", _timer];
+    [self updateTimer];
+    _timerLabel.text = [NSString stringWithFormat:@"00:00.000"];
     
     //show the timer
+    
     [self addChild:_timerLabel];
     [self addChild:_timerTextLabel];
     [self addChild:_tapToBegin];
+    
     
     
     
@@ -195,8 +193,7 @@
     _endOfGame = false;
     _userStart = false;
     
-    
-    
+
     [self startTimer];
     
     //put the ending button in
@@ -230,7 +227,9 @@
     _userStart = false;
     
     //stop the timer
-    [_timerLabel removeActionForKey:@"timer"];
+    [self.stopWatchTimer invalidate];
+    self.stopWatchTimer = nil;
+    [self updateTimer];
     
     //evaluate if a valid score here
     
@@ -253,18 +252,33 @@
 
 - (void)startTimer {
     
-    float interval = .01;
+    self.startDate = [NSDate date];
     
-    SKAction *wait = [SKAction waitForDuration:interval];
-    SKAction *addToTimer = [SKAction runBlock:^{
-        //update the timer
-        _timer += interval;
-        _timerLabel.text = [NSString stringWithFormat:@"%.2f", _timer];
-        
-    }];
-    SKAction *theTimer = [SKAction sequence:@[wait, addToTimer]];
-    SKAction *repeatTimer = [SKAction repeatActionForever:theTimer];
-    [_timerLabel runAction:repeatTimer withKey:@"timer"];
+    // Create the stop watch timer that fires every 100 ms
+    self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/1000.0
+                                                           target:self
+                                                         selector:@selector(updateTimer)
+                                                         userInfo:nil
+                                                          repeats:YES];
+    
+}
+
+- (void)updateTimer {
+    
+    // Create date from the elapsed time
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    // Create a date formatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss.SSS"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    // Format the elapsed time and set it to the label
+    NSString *timeString = [dateFormatter stringFromDate:timerDate];
+    _timerLabel.text = timeString;
+    
     
 }
 

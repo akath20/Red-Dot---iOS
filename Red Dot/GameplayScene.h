@@ -15,7 +15,6 @@
 @property BOOL currentlyPlaying;
 @property SKLabelNode *timerLabel;
 @property SKLabelNode *timerTextLabel;
-@property float timer;
 @property SKSpriteNode *itsRedButton;
 @property BOOL endOfGame;
 @property BOOL userStart;
