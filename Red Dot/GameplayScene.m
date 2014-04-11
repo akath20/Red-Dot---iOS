@@ -8,6 +8,7 @@
 
 #import "GameplayScene.h"
 #import "MainMenuScene.h"
+#import "SharedValues.h"
 
 @implementation GameplayScene
 
@@ -73,13 +74,6 @@
         _playAgainButton.name = @"playAgainButton";
         
         
-        //create the tap to begin label
-        _tapToBegin = [[SKLabelNode alloc] init];
-        _tapToBegin.fontColor = [UIColor blackColor];
-        _tapToBegin.text = @"Tap the dot to start";
-        _tapToBegin.position = bottomPoint;
-        
-        
         //create the restart button
         SKTexture *restartButtonTexture = [SKTexture textureWithImageNamed:@"Restart-Button.png"];
         _restartButton = [SKSpriteNode spriteNodeWithTexture:restartButtonTexture];
@@ -88,7 +82,28 @@
         _restartButton.name = @"restartButton";
         
         
+        //create the status label
+        _statusLabel = [[SKLabelNode alloc] init];
+        _statusLabel.fontColor = [UIColor blackColor];
+        _statusLabel.text = @"";
+        _statusLabel.position = bottomPoint;
+        [self addChild:_statusLabel];
         
+        
+        //create the high score label
+        _highScoreLabel = [[SKLabelNode alloc] init];
+        _highScoreLabel.fontColor = [UIColor blackColor];
+        _highScoreLabel.text = [NSString stringWithFormat:@"High Score: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
+        _highScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), _timerTextLabel.position.y+25);
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"]) {
+            //if a score there
+            _highScoreLabel.hidden = false;
+        } else {
+            _highScoreLabel.hidden = true;
+        }
+        [self addChild:_highScoreLabel];
+        
+
         //other variables
         _currentlyPlaying = false;
         _endOfGame = false;
@@ -111,7 +126,7 @@
         
         if (!_endOfGame) {
             //if it's note the end of the game
-            _redCircle.fillColor = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1];
+            _redCircle.fillColor = [[[SharedValues allValues] colorsArray] objectAtIndex:arc4random_uniform([[[SharedValues allValues] colorsArray] count])];
         }
         
         if (_userStart) {
@@ -172,13 +187,13 @@
     
     
     [self updateTimer];
-    _timerLabel.text = [NSString stringWithFormat:@"00:00.000"];
+    _timerLabel.text = [NSString stringWithFormat:@"00.000"];
     
     //show the timer
     
     [self addChild:_timerLabel];
     [self addChild:_timerTextLabel];
-    [self addChild:_tapToBegin];
+    _statusLabel.text = @"Tap the dot to begin.";
     
     
     
@@ -198,8 +213,8 @@
     
     //put the ending button in
     [self addChild:_itsRedButton];
-    [_tapToBegin removeFromParent];
     [self addChild:_restartButton];
+    _statusLabel.text = @"";
     
     
      
@@ -233,6 +248,48 @@
     
     //evaluate if a valid score here
     
+    if ([_redCircle fillColor] == [UIColor redColor]) {
+        //if a valid score
+        
+        //get the time as a value
+        
+        double time = [_timerLabel.text doubleValue];
+        
+        if ((time < [[[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"] doubleValue]) || (![[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"])) {
+            //if beat high score or there is no high score on file
+            
+            //put in the save file
+            [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] setDouble:time forKey:@"raceTheClock"];
+            
+            //update the text and make sure it's showing
+            _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
+            _highScoreLabel.hidden = false;
+            
+            //tell the user of their new time
+            _statusLabel.text = @"New Fastest Time!";
+            
+            
+            
+            
+        } else {
+            //if didn't beat high score
+            
+            //update the text and make sure it's showing
+            _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
+            _highScoreLabel.hidden = false;
+            
+        }
+        
+        
+        
+    } else {
+        //if an invalid score
+        
+        _statusLabel.text = @"That's not red! Time not recorded.";
+        
+        
+        
+    }
     
     
     
@@ -254,7 +311,7 @@
     
     self.startDate = [NSDate date];
     
-    // Create the stop watch timer that fires every 100 ms
+    // Create the stop watch timer
     self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/1000.0
                                                            target:self
                                                          selector:@selector(updateTimer)
@@ -272,7 +329,7 @@
     
     // Create a date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"mm:ss.SSS"];
+    [dateFormatter setDateFormat:@"ss.SSS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
     // Format the elapsed time and set it to the label

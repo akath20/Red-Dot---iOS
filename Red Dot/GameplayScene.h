@@ -19,9 +19,10 @@
 @property BOOL endOfGame;
 @property BOOL userStart;
 @property SKSpriteNode *playAgainButton;
-@property SKLabelNode *tapToBegin;
 @property SKSpriteNode *restartButton;
 @property (strong, nonatomic) NSTimer *stopWatchTimer; 
 @property (strong, nonatomic) NSDate *startDate;
+@property SKLabelNode *statusLabel;
+@property SKLabelNode *highScoreLabel;
 
 @end

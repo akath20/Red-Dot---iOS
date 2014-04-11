@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MainMenuScene.h"
+#import "SharedValues.h"
 
 @implementation ViewController
 
@@ -26,6 +27,10 @@
     
     // Present the scene.
     [skView presentScene:mainMenu];
+    
+    NSArray *colorsArray = [[NSArray alloc] initWithObjects:[UIColor blackColor], [UIColor grayColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor cyanColor], [UIColor yellowColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor purpleColor], [UIColor brownColor], nil];
+    
+    [[SharedValues allValues] setColorsArray:[NSArray arrayWithArray:colorsArray]];
 }
 
 - (BOOL)shouldAutorotate

@@ -8,6 +8,7 @@
 
 #import "MainMenuScene.h"
 #import "GameplayScene.h"
+#import "SharedValues.h"
 
 @implementation MainMenuScene
 
@@ -29,7 +30,7 @@
         //add the animation
         SKAction *wait = [SKAction waitForDuration:3];
         SKAction *animate = [SKAction runBlock:^{
-            _redCircle.fillColor = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1];
+            _redCircle.fillColor = [[[SharedValues allValues] colorsArray] objectAtIndex:arc4random_uniform([[[SharedValues allValues] colorsArray] count])];
             
         }];
         SKAction *animateAndWait = [SKAction sequence:@[animate, [SKAction waitForDuration:1.5]]];

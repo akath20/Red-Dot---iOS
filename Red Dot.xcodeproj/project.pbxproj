@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA24565218F88DE0003544E3 /* SharedValues.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24565118F88DE0003544E3 /* SharedValues.m */; };
 		FA432C9B18F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
 		FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */; };
 		FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA24565018F88DE0003544E3 /* SharedValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedValues.h; sourceTree = "<group>"; };
+		FA24565118F88DE0003544E3 /* SharedValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedValues.m; sourceTree = "<group>"; };
 		FA432C9718F1BDE100DC5220 /* Red Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA432C9A18F1BDE100DC5220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA24564F18F88CB6003544E3 /* SharedValues */ = {
+			isa = PBXGroup;
+			children = (
+				FA24565018F88DE0003544E3 /* SharedValues.h */,
+				FA24565118F88DE0003544E3 /* SharedValues.m */,
+			);
+			name = SharedValues;
+			sourceTree = "<group>";
+		};
 		FA432C8E18F1BDE100DC5220 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				FA432CDE18F1D98B00DC5220 /* App Delegate */,
+				FA24564F18F88CB6003544E3 /* SharedValues */,
 				FA432CAE18F1BDE100DC5220 /* Main.storyboard */,
 				FA432CDF18F1D9A700DC5220 /* View Controller */,
 				FA432CDD18F1D98100DC5220 /* Scenes */,
@@ -335,6 +348,7 @@
 				FA432CAD18F1BDE100DC5220 /* AppDelegate.m in Sources */,
 				FA432CDB18F1D97600DC5220 /* GameplayScene.m in Sources */,
 				FA432CD818F1BE2000DC5220 /* MainMenuScene.m in Sources */,
+				FA24565218F88DE0003544E3 /* SharedValues.m in Sources */,
 				FA432CA918F1BDE100DC5220 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +556,7 @@
 				FA432CD218F1BDE100DC5220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA432CD318F1BDE100DC5220 /* Build configuration list for PBXNativeTarget "Red DotTests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +565,7 @@
 				FA432CD518F1BDE100DC5220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
