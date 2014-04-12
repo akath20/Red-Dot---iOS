@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MainMenuScene.h"
 #import "SharedValues.h"
+#import <sys/utsname.h>
 
 @implementation ViewController
 
@@ -31,26 +32,53 @@
     NSArray *colorsArray = [[NSArray alloc] initWithObjects:[UIColor blackColor], [UIColor grayColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor cyanColor], [UIColor yellowColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor purpleColor], [UIColor brownColor], nil];
     
     [[SharedValues allValues] setColorsArray:[NSArray arrayWithArray:colorsArray]];
+    
+    
+    //set the notification watchers
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emailMessage) name:@"emailMessage" object:nil];
+    
+    
+    
+    
+    
+    
+    
 }
 
-- (BOOL)shouldAutorotate
-{
-    return YES;
+- (void)emailMessage {
+    
+    MFMailComposeViewController *emailSheet = [[MFMailComposeViewController alloc] init];
+    
+    emailSheet.mailComposeDelegate = self;
+    
+    // Fill out the email body text.
+
+    //get the device type
+    //*IMPORT* <sys/utsname.h>
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceType = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    
+    
+    
+    
+    NSString *emailBody = [NSString stringWithFormat:@"\n\r\n\r\n\riOS Version: %@\n\rDevice: %@\n\rApp Version: %@", [[UIDevice currentDevice] systemVersion], deviceType, [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]];
+    [emailSheet setMessageBody:emailBody isHTML:NO];
+    
+    // Present the mail composition interface.
+    [self presentViewController:emailSheet animated:true completion:nil];
+    
+    
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [controller dismissViewControllerAnimated:true completion:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+
+
+
+
+
 
 @end

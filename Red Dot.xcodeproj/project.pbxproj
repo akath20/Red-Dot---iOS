@@ -12,6 +12,11 @@
 		FA24565918F8AA60003544E3 /* SettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24565818F8AA60003544E3 /* SettingsScene.m */; };
 		FA24565B18F8AF91003544E3 /* Race The Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24565A18F8AF91003544E3 /* Race The Clock.png */; };
 		FA24565E18F8B098003544E3 /* GameModeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24565D18F8B098003544E3 /* GameModeScene.m */; };
+		FA24566318F9C394003544E3 /* no-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24566218F9C394003544E3 /* no-background.png */; };
+		FA24566518F9C8D9003544E3 /* Email-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24566418F9C8D9003544E3 /* Email-Button.png */; };
+		FA24566718F9C8E4003544E3 /* Reset High Scores Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24566618F9C8E4003544E3 /* Reset High Scores Button.png */; };
+		FA24566918F9C8EE003544E3 /* Website-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24566818F9C8EE003544E3 /* Website-Button.png */; };
+		FA24566D18F9CCAD003544E3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA24566C18F9CCAD003544E3 /* MessageUI.framework */; };
 		FA432C9B18F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
 		FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */; };
 		FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
@@ -57,6 +62,12 @@
 		FA24565A18F8AF91003544E3 /* Race The Clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Race The Clock.png"; sourceTree = "<group>"; };
 		FA24565C18F8B098003544E3 /* GameModeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeScene.h; sourceTree = "<group>"; };
 		FA24565D18F8B098003544E3 /* GameModeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeScene.m; sourceTree = "<group>"; };
+		FA24566218F9C394003544E3 /* no-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-background.png"; sourceTree = "<group>"; };
+		FA24566418F9C8D9003544E3 /* Email-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email-Button.png"; sourceTree = "<group>"; };
+		FA24566618F9C8E4003544E3 /* Reset High Scores Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reset High Scores Button.png"; sourceTree = "<group>"; };
+		FA24566818F9C8EE003544E3 /* Website-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Website-Button.png"; sourceTree = "<group>"; };
+		FA24566A18F9C9AA003544E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FA24566C18F9CCAD003544E3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FA432C9718F1BDE100DC5220 /* Red Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA432C9A18F1BDE100DC5220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA24566D18F9CCAD003544E3 /* MessageUI.framework in Frameworks */,
 				FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */,
 				FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */,
 				FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */,
@@ -147,6 +159,14 @@
 			name = "Game Modes";
 			sourceTree = "<group>";
 		};
+		FA24566118F9C37B003544E3 /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				FA24566218F9C394003544E3 /* no-background.png */,
+			);
+			name = Logo;
+			sourceTree = "<group>";
+		};
 		FA432C8E18F1BDE100DC5220 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +189,8 @@
 		FA432C9918F1BDE100DC5220 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA24566C18F9CCAD003544E3 /* MessageUI.framework */,
+				FA24566A18F9C9AA003544E3 /* Social.framework */,
 				FA432CE018F1ECC500DC5220 /* CoreMotion.framework */,
 				FA432C9A18F1BDE100DC5220 /* Foundation.framework */,
 				FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */,
@@ -253,6 +275,7 @@
 		FA432CE218F1F39A00DC5220 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FA24566118F9C37B003544E3 /* Logo */,
 				FA432CE318F1F3A100DC5220 /* Buttons */,
 			);
 			name = Images;
@@ -261,6 +284,9 @@
 		FA432CE318F1F3A100DC5220 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				FA24566818F9C8EE003544E3 /* Website-Button.png */,
+				FA24566618F9C8E4003544E3 /* Reset High Scores Button.png */,
+				FA24566418F9C8D9003544E3 /* Email-Button.png */,
 				FA24565A18F8AF91003544E3 /* Race The Clock.png */,
 				FA24565518F8A8E2003544E3 /* Settings.png */,
 				FA432CF218F22E2600DC5220 /* Restart-Button.png */,
@@ -350,11 +376,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA24565618F8A8E2003544E3 /* Settings.png in Resources */,
+				FA24566518F9C8D9003544E3 /* Email-Button.png in Resources */,
 				FA432CA718F1BDE100DC5220 /* InfoPlist.strings in Resources */,
+				FA24566918F9C8EE003544E3 /* Website-Button.png in Resources */,
+				FA24566718F9C8E4003544E3 /* Reset High Scores Button.png in Resources */,
 				FA432CE718F1F74900DC5220 /* Back-Button.png in Resources */,
 				FA432CE518F1F3B400DC5220 /* Play-Button.png in Resources */,
 				FA24565B18F8AF91003544E3 /* Race The Clock.png in Resources */,
 				FA432CBA18F1BDE100DC5220 /* Images.xcassets in Resources */,
+				FA24566318F9C394003544E3 /* no-background.png in Resources */,
 				FA432CEF18F21B9C00DC5220 /* Play-Again.png in Resources */,
 				FA432CF318F22E2600DC5220 /* Restart-Button.png in Resources */,
 				FA432CED18F20D7C00DC5220 /* Its-Red-Button.png in Resources */,
@@ -513,6 +543,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Red Dot/Red Dot-Prefix.pch";
 				INFOPLIST_FILE = "Red Dot/Red Dot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -527,6 +558,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Red Dot/Red Dot-Prefix.pch";
 				INFOPLIST_FILE = "Red Dot/Red Dot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
