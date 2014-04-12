@@ -51,11 +51,11 @@
         //create the timer
         _timerLabel = [[SKLabelNode alloc] init];
         _timerLabel.fontColor = [UIColor blackColor];
-        _timerLabel.position = CGPointMake(CGRectGetMidX(self.frame)+70, (_redCircle.position.y+circle.size.height)+40);
+        _timerLabel.position = CGPointMake(CGRectGetMidX(self.frame)+60, (_redCircle.position.y+circle.size.height)+40);
         _timerTextLabel = [[SKLabelNode alloc] init];
         _timerTextLabel.text = @"Timer:";
         _timerTextLabel.fontColor = [UIColor blackColor];
-        _timerTextLabel.position = CGPointMake(CGRectGetMidX(self.frame)-70, (_redCircle.position.y+circle.size.height)+40);
+        _timerTextLabel.position = CGPointMake(CGRectGetMidX(self.frame)-60, (_redCircle.position.y+circle.size.height)+40);
         
         
         //create the it's red button
@@ -95,7 +95,7 @@
         _highScoreLabel = [[SKLabelNode alloc] init];
         _highScoreLabel.fontColor = [UIColor blackColor];
         _highScoreLabel.text = [NSString stringWithFormat:@"High Score: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
-        _highScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), _timerTextLabel.position.y+25);
+        _highScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), _timerTextLabel.position.y+30);
         _highScoreLabel.fontSize = 16;
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"]) {
             //if a score there
@@ -140,7 +140,7 @@
         
     } else if ([[touchedNode name] isEqualToString:@"backButton"]) {
         
-        GameModeScene *gameMode = [GameModeScene sceneWithSize:self.scene.size];
+        GameModeScene *gameMode = [[GameModeScene alloc] initWithSize:self.frame.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
         [self.scene.view presentScene:gameMode transition:transition];
         
