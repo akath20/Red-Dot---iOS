@@ -86,7 +86,8 @@
         _statusLabel = [[SKLabelNode alloc] init];
         _statusLabel.fontColor = [UIColor blackColor];
         _statusLabel.text = @"";
-        _statusLabel.position = bottomPoint;
+        _statusLabel.fontSize = 18;
+        _statusLabel.position = CGPointMake(bottomPoint.x, bottomPoint.y+(_startButton.size.height/2)+25);
         [self addChild:_statusLabel];
         
         
@@ -95,6 +96,7 @@
         _highScoreLabel.fontColor = [UIColor blackColor];
         _highScoreLabel.text = [NSString stringWithFormat:@"High Score: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
         _highScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), _timerTextLabel.position.y+25);
+        _highScoreLabel.fontSize = 16;
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"]) {
             //if a score there
             _highScoreLabel.hidden = false;
@@ -108,6 +110,7 @@
         _currentlyPlaying = false;
         _endOfGame = false;
         _userStart = false;
+        _colorsArray = [[SharedValues allValues] colorsArray];
         
         
     }
@@ -126,7 +129,7 @@
         
         if (!_endOfGame) {
             //if it's note the end of the game
-            _redCircle.fillColor = [[[SharedValues allValues] colorsArray] objectAtIndex:arc4random_uniform([[[SharedValues allValues] colorsArray] count])];
+            _redCircle.fillColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
         }
         
         if (_userStart) {
@@ -248,7 +251,8 @@
     
     //evaluate if a valid score here
     
-    if ([_redCircle fillColor] == [UIColor redColor]) {
+    
+    if ([[_redCircle fillColor] isEqual:[UIColor redColor]]) {
         //if a valid score
         
         //get the time as a value
@@ -259,7 +263,7 @@
             //if beat high score or there is no high score on file
             
             //put in the save file
-            [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] setDouble:time forKey:@"raceTheClock"];
+            [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] setObject:[NSString stringWithFormat:@"%f", time] forKey:@"raceTheClock"];
             
             //update the text and make sure it's showing
             _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];

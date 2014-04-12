@@ -8,6 +8,7 @@
 
 #import "GameModeScene.h"
 #import "MainMenuScene.h"
+#import "RaceTheClock.h"
 
 #define HighScores [[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"]
 
@@ -29,7 +30,7 @@
         pickLabel.fontColor = [UIColor blackColor];
         pickLabel.fontSize = 22;
         pickLabel.text = @"Select a Game Mode.";
-        pickLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height-60);
+        pickLabel.position = CGPointMake(CGRectGetMidX(self.frame)+30, self.frame.size.height-56.5);
         [self addChild:pickLabel];
         
         
@@ -45,6 +46,7 @@
         //Race the Clock button + HS
         SKTexture *raceTheClock = [SKTexture textureWithImageNamed:@"Race The Clock.png"];
         SKSpriteNode *raceTheClockButton = [SKSpriteNode spriteNodeWithTexture:raceTheClock];
+        raceTheClockButton.name = @"raceTheClock";
         raceTheClockButton.position = CGPointMake(xMidOffset, pickLabel.position.y-60);
         [raceTheClockButton setScale:.6];
         
@@ -94,7 +96,14 @@
      
         MainMenuScene *mainMenu = [[MainMenuScene alloc] initWithSize:self.frame.size];
         SKTransition *fade = [SKTransition fadeWithDuration:.5];
+        [self.scene.view presentScene:mainMenu transition:fade];
         
+        
+    } else if ([[touchedNode name] isEqualToString:@"raceTheClock"]) {
+        
+        RaceTheClock *raceTheClock = [[RaceTheClock alloc] initWithSize:self.frame.size];
+        SKTransition *fade = [SKTransition fadeWithDuration:.5];
+        [self.scene.view presentScene:raceTheClock transition:fade];
         
     }
     

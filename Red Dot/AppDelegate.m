@@ -21,6 +21,10 @@
         [[NSUserDefaults standardUserDefaults] setObject:highScoresDic forKey:@"highScores"];
         
         /*
+         
+         STORE AS STRINGS AND RETRIEVE AS FLOATS
+         
+         
           Current Names for High Score Games
          
          raceTheClock
