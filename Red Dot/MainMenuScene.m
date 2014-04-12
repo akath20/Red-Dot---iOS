@@ -53,7 +53,7 @@
         SKTexture *settings = [SKTexture textureWithImageNamed:@"Settings.png"];
         SKSpriteNode *settingsButtonNode = [SKSpriteNode spriteNodeWithTexture:settings];
         settingsButtonNode.name = @"settingsButtonNode";
-        [settingsButtonNode setScale:.6];
+        [settingsButtonNode setScale:.4];
         settingsButtonNode.position = CGPointMake(settingsButtonNode.size.width/2+10, (self.scene.frame.size.height-(settingsButtonNode.size.height/2))-30);
         [self addChild:settingsButtonNode];
         

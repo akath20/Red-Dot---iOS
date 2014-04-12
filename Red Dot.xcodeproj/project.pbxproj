@@ -142,10 +142,10 @@
 			children = (
 				FA432CD618F1BE2000DC5220 /* MainMenuScene.h */,
 				FA432CD718F1BE2000DC5220 /* MainMenuScene.m */,
-				FA24565718F8AA60003544E3 /* SettingsScene.h */,
-				FA24565818F8AA60003544E3 /* SettingsScene.m */,
 				FA24565C18F8B098003544E3 /* GameModeScene.h */,
 				FA24565D18F8B098003544E3 /* GameModeScene.m */,
+				FA24565718F8AA60003544E3 /* SettingsScene.h */,
+				FA24565818F8AA60003544E3 /* SettingsScene.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";

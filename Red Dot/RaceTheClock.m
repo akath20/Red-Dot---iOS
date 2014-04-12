@@ -7,7 +7,7 @@
 //
 
 #import "RaceTheClock.h"
-#import "MainMenuScene.h"
+#import "GameModeScene.h"
 #import "SharedValues.h"
 
 @implementation RaceTheClock
@@ -137,9 +137,9 @@
         
     } else if ([[touchedNode name] isEqualToString:@"backButton"]) {
         
-        MainMenuScene *mainMenu = [MainMenuScene sceneWithSize:self.scene.size];
+        GameModeScene *gameMode = [GameModeScene sceneWithSize:self.scene.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
-        [self.scene.view presentScene:mainMenu transition:transition];
+        [self.scene.view presentScene:gameMode transition:transition];
         
     } else if ([[touchedNode name] isEqualToString:@"startButton"]) {
         

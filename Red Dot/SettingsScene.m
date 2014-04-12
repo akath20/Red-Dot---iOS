@@ -7,6 +7,7 @@
 //
 
 #import "SettingsScene.h"
+#import "MainMenuScene.h"
 
 
 @implementation SettingsScene
@@ -18,11 +19,15 @@
         //create the scene here
         self.backgroundColor = [UIColor whiteColor];
         
+        int yOffset = 0;
+        
         
         //add the logo to the background
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"no-background.png"];
+        SKTexture *backgroundTexture = [SKTexture textureWithImageNamed:@"no-background.png"];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         background.alpha = .1;
+        [background setScale:.6];
         [self addChild:background];
         
         //add dev by label
@@ -31,7 +36,7 @@
         devByLabel.fontSize = 20;
         devByLabel.text = @"Developed by: Alex Atwater";
         devByLabel.fontName = @"System Bold";
-        devByLabel.position = CGPointMake(20, 138);
+        devByLabel.position = CGPointMake(CGRectGetMidX(self.frame), 380+yOffset);
         devByLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         [self addChild:devByLabel];
         
@@ -41,7 +46,7 @@
         versionLabel.fontSize = 20;
         versionLabel.text = [NSString stringWithFormat:@"Version: %@", [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]];
         versionLabel.fontName = @"System";
-        versionLabel.position = CGPointMake(20, 167);
+        versionLabel.position = CGPointMake(CGRectGetMidX(self.frame), 350+yOffset);
         versionLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         [self addChild:versionLabel];
         
@@ -52,7 +57,7 @@
         supportLabel.fontSize = 20;
         supportLabel.fontName = @"System Bold";
         supportLabel.text = @"Need Support?";
-        supportLabel.position = CGPointMake(20, 216);
+        supportLabel.position = CGPointMake(CGRectGetMidX(self.frame), 300+yOffset);
         supportLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         [self addChild:supportLabel];
         
@@ -60,15 +65,26 @@
         SKTexture *emailTexture = [SKTexture textureWithImageNamed:@"Email-Button.png"];
         SKSpriteNode *emailButton = [[SKSpriteNode alloc] initWithTexture:emailTexture];
         emailButton.name = @"emailButton";
-        emailButton.position = CGPointMake(CGRectGetMidX(self.frame)-(emailButton.size.width/2)-20, 248);
+        [emailButton setScale:.5];
+        emailButton.position = CGPointMake(CGRectGetMidX(self.frame)-(emailButton.size.width/2)-10, 248+yOffset);
         
         SKTexture *websiteTexture = [SKTexture textureWithImageNamed:@"Website-Button.png"];
         SKSpriteNode *websiteButton = [[SKSpriteNode alloc] initWithTexture:websiteTexture];
-        emailButton.name = @"websiteButton";
-        emailButton.position = CGPointMake(CGRectGetMidX(self.frame)+(emailButton.size.width/2)+20, 248);
+        websiteButton.name = @"websiteButton";
+        [websiteButton setScale:.5];
+        websiteButton.position = CGPointMake(CGRectGetMidX(self.frame)+(emailButton.size.width/2)+10, 248+yOffset);
         
         [self addChild:emailButton];
         [self addChild:websiteButton];
+        
+        
+        //add the back button
+        SKTexture *backButtonTexture = [SKTexture textureWithImageNamed:@"Back-Button"];
+        SKSpriteNode *backButton = [SKSpriteNode spriteNodeWithTexture:backButtonTexture];
+        [backButton setScale:.4];
+        backButton.position = CGPointMake(backButton.size.width/2+10, (self.scene.frame.size.height-(backButton.size.height/2))-30);
+        backButton.name = @"backButton";
+        [self addChild:backButton];
         
         
         
@@ -83,6 +99,8 @@
     
     return self;
 }
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     
@@ -98,6 +116,15 @@
         
     } else if ([[touchedNode name] isEqualToString:@"websiteButton"]) {
         
+        //open my website
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://webpages.charter.net/akath20/"]];
+        
+
+    } else if ([[touchedNode name] isEqualToString:@"backButton"]) {
+        
+        MainMenuScene *mainMenu = [[MainMenuScene alloc] initWithSize:self.scene.size];
+        SKTransition *transition = [SKTransition fadeWithDuration:.5];
+        [self.scene.view presentScene:mainMenu transition:transition];
         
         
     }
