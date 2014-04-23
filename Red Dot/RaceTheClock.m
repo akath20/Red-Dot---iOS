@@ -179,10 +179,6 @@
 - (void)setupGame {
     
     //setup the game here
-    
-    
-    
-    
     _currentlyPlaying = false;
     _endOfGame = false;
     _userStart = true;
@@ -226,16 +222,18 @@
 - (void)restartGame {
     
     [_restartButton removeFromParent];
-    [_timerLabel removeFromParent];
-    [_timerTextLabel removeFromParent];
     [_itsRedButton removeFromParent];
     
     //stop the timer
-    [_timerLabel removeActionForKey:@"timer"];
+    [self.stopWatchTimer invalidate];
+    self.stopWatchTimer = nil;
+    [self updateTimer];
+    
+    [_timerLabel removeFromParent];
+    [_timerTextLabel removeFromParent];
     
     [self setupGame];
-    
-    
+        
     
 }
 
@@ -250,8 +248,6 @@
     [self updateTimer];
     
     //evaluate if a valid score here
-    
-    
     if ([[_redCircle fillColor] isEqual:[UIColor redColor]]) {
         //if a valid score
         

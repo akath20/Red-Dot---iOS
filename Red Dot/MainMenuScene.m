@@ -10,6 +10,7 @@
 #import "GameModeScene.h"
 #import "SharedValues.h"
 #import "SettingsScene.h"
+#import "LevelsScene.h"
 
 @implementation MainMenuScene
 
@@ -71,9 +72,9 @@
     
     if ([[touchedNode name] isEqualToString:@"playButtonNode"]) {
         
-        GameModeScene *gameModeScene = [GameModeScene sceneWithSize:self.scene.size];
+        LevelsScene *levelsScene = [LevelsScene sceneWithSize:self.scene.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
-        [self.scene.view presentScene:gameModeScene transition:transition];
+        [self.scene.view presentScene:levelsScene transition:transition];
         
     } else if ([[touchedNode name] isEqualToString:@"settingsButtonNode"]) {
         

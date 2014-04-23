@@ -10,6 +10,7 @@
 #import "MainMenuScene.h"
 #import "SharedValues.h"
 #import <sys/utsname.h>
+#import "LevelsScene.h"
 
 @implementation ViewController
 
@@ -23,11 +24,11 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene *mainMenu = [MainMenuScene sceneWithSize:skView.bounds.size];
-    mainMenu.scaleMode = SKSceneScaleModeAspectFill;
+    SKScene *levelsScene = [MainMenuScene sceneWithSize:skView.bounds.size];
+    levelsScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:mainMenu];
+    [skView presentScene:levelsScene];
     
     NSArray *colorsArray = [[NSArray alloc] initWithObjects:[UIColor blackColor], [UIColor grayColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor cyanColor], [UIColor yellowColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor purpleColor], [UIColor brownColor], nil];
     
@@ -36,10 +37,6 @@
     
     //set the notification watchers
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emailMessage) name:@"emailMessage" object:nil];
-    
-    
-    
-    
     
     
     
