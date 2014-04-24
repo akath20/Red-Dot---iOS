@@ -75,6 +75,22 @@
     [controller dismissViewControllerAnimated:true completion:nil];
 }
 
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    
+    //show it if it's loaded
+    [UIView animateWithDuration:.5 animations:^{
+        _adBanner.alpha = 1;
+    }];
+    
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    
+    //hide it if it isn't loaded
+    _adBanner.alpha = 0;
+    
+}
+
 
 
 

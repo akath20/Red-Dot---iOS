@@ -132,24 +132,13 @@
                 //change the time
                 if (_score%5 == 0 && !(_score == 0)) {
                     //if the score is up 5 and not 0 and didn't already change for this number
-                    if (!_pauseInterval <= .3) {
+                    if (!_pauseInterval <= .425) {
                         //if it's not less than 3 then change it
                         _pauseInterval -= .1;
                         _pauseAction.duration = _pauseInterval;
                     }
                 
                 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 
             } else {
                 
@@ -249,7 +238,7 @@
     //other variables
     _lastRedWasTapped = YES;
     _notRedCount = 0;
-    _pauseInterval = .7;
+    _pauseInterval = .8;
     _pauseAction.duration = 1;
 
 

@@ -17,6 +17,7 @@
 		FA24566718F9C8E4003544E3 /* Reset High Scores Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24566618F9C8E4003544E3 /* Reset High Scores Button.png */; };
 		FA24566918F9C8EE003544E3 /* Website-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA24566818F9C8EE003544E3 /* Website-Button.png */; };
 		FA24566D18F9CCAD003544E3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA24566C18F9CCAD003544E3 /* MessageUI.framework */; };
+		FA36FC9A19099A4400C6FB47 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA36FC9919099A4400C6FB47 /* iAd.framework */; };
 		FA432C9B18F1BDE100DC5220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9A18F1BDE100DC5220 /* Foundation.framework */; };
 		FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */; };
 		FA432C9F18F1BDE100DC5220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA432C9E18F1BDE100DC5220 /* UIKit.framework */; };
@@ -69,6 +70,7 @@
 		FA24566818F9C8EE003544E3 /* Website-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Website-Button.png"; sourceTree = "<group>"; };
 		FA24566A18F9C9AA003544E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FA24566C18F9CCAD003544E3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		FA36FC9919099A4400C6FB47 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		FA432C9718F1BDE100DC5220 /* Red Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA432C9A18F1BDE100DC5220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA432C9C18F1BDE100DC5220 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA36FC9A19099A4400C6FB47 /* iAd.framework in Frameworks */,
 				FA24566D18F9CCAD003544E3 /* MessageUI.framework in Frameworks */,
 				FA432CE118F1ECC500DC5220 /* CoreMotion.framework in Frameworks */,
 				FA432C9D18F1BDE100DC5220 /* CoreGraphics.framework in Frameworks */,
@@ -188,6 +191,7 @@
 		FA432C9918F1BDE100DC5220 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA36FC9919099A4400C6FB47 /* iAd.framework */,
 				FA24566C18F9CCAD003544E3 /* MessageUI.framework */,
 				FA24566A18F9C9AA003544E3 /* Social.framework */,
 				FA432CE018F1ECC500DC5220 /* CoreMotion.framework */,
@@ -566,6 +570,7 @@
 				INFOPLIST_FILE = "Red Dot/Red Dot-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C184984F-B956-4194-93F4-C54B6683C31B";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
