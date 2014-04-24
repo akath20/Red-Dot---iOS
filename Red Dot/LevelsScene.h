@@ -23,6 +23,9 @@
 @property UIColor *currentColor;
 @property UIColor *lastColor;
 @property float pauseInterval;
-@property BOOL *lastRedNoTap;
+@property BOOL lastRedWasTapped;
+@property SKScene *settingsScene;
+@property SKSpriteNode *settingsButton;
+@property SKSpriteNode *restartButton;
 
 @end

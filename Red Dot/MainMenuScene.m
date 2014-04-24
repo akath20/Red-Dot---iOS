@@ -32,7 +32,7 @@
         //add the animation
         SKAction *wait = [SKAction waitForDuration:3];
         SKAction *animate = [SKAction runBlock:^{
-            _redCircle.fillColor = [[[SharedValues allValues] colorsArray] objectAtIndex:arc4random_uniform([[[SharedValues allValues] colorsArray] count])];
+            _redCircle.fillColor = [[[SharedValues allValues] colorsArray] objectAtIndex:arc4random_uniform((int)[[[SharedValues allValues] colorsArray] count])];
             
         }];
         SKAction *animateAndWait = [SKAction sequence:@[animate, [SKAction waitForDuration:1.5]]];

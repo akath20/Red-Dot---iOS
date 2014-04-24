@@ -16,8 +16,15 @@
     return allValues;
 }
 
-+ (id) allocWithZone:(struct _NSZone *)zone {
-    return [self allValues];
+- (void)createColors {
+    
+    
+    NSArray *colorsArray = [NSArray arrayWithObjects:[UIColor blackColor], [UIColor grayColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor cyanColor], [UIColor yellowColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor purpleColor], [UIColor brownColor], nil];
+    
+    _colorsArray = [[NSArray alloc] initWithArray:colorsArray copyItems:true];
+    
+    
+    
 }
 
 @end

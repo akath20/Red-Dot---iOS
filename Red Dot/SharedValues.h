@@ -9,5 +9,6 @@
 
 @property (strong, nonatomic) NSArray *colorsArray;
 
+- (void)createColors;
 
 @end

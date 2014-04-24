@@ -8,6 +8,7 @@
 
 #import "LevelsScene.h"
 #import "SharedValues.h"
+#import "SettingsScene.h"
 
 @implementation LevelsScene
 
@@ -28,11 +29,14 @@
         
         //create the settings button
         SKTexture *settings = [SKTexture textureWithImageNamed:@"Settings.png"];
-        SKSpriteNode *settingsButtonNode = [SKSpriteNode spriteNodeWithTexture:settings];
-        settingsButtonNode.name = @"settingsButton";
-        [settingsButtonNode setScale:.4];
-        settingsButtonNode.position = CGPointMake(settingsButtonNode.size.width/2+10, (self.scene.frame.size.height-(settingsButtonNode.size.height/2))-30);
-        [self addChild:settingsButtonNode];
+        _settingsButton = [SKSpriteNode spriteNodeWithTexture:settings];
+        _settingsButton.name = @"settingsButton";
+        [_settingsButton setScale:.4];
+        _settingsButton.position = CGPointMake(_settingsButton.size.width/2+10, (self.scene.frame.size.height-(_settingsButton.size.height/2))-30);
+        [self addChild:_settingsButton];
+        
+        //create the settings scene
+        _settingsScene = [[SettingsScene alloc] initWithSize:self.frame.size];
         
         //here is the bottem button location
         CGPoint bottomPoint = CGPointMake(CGRectGetMidX(self.frame), _playButton.size.height/2+120);
@@ -66,14 +70,16 @@
         _scoreLabel.fontColor = [UIColor blackColor];
         _scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), (_redCircle.position.y+circle.size.height)+40);
         _scoreLabel.text = @"";
+        _scoreLabel.name = @"scoreLabel";
+        [self addChild:_scoreLabel];
         
         
         //create the restart button
         SKTexture *restartButtonTexture = [SKTexture textureWithImageNamed:@"Restart-Button.png"];
-        _pauseButton = [SKSpriteNode spriteNodeWithTexture:restartButtonTexture];
-        [self.pauseButton setScale:.4];
-        _pauseButton.position = CGPointMake((self.scene.frame.size.width-(self.pauseButton.size.width/2))-10, (self.scene.frame.size.height-(self.pauseButton.size.height/2))-30);
-        _pauseButton.name = @"restartButton";
+        _restartButton = [SKSpriteNode spriteNodeWithTexture:restartButtonTexture];
+        [self.restartButton setScale:.4];
+        _restartButton.position = CGPointMake((self.scene.frame.size.width-(self.restartButton.size.width/2))-10, (self.scene.frame.size.height-(self.restartButton.size.height/2))-30);
+        _restartButton.name = @"restartButton";
         
         //create the status label
         _statusLabel = [[SKLabelNode alloc] init];
@@ -84,20 +90,18 @@
         [self addChild:_statusLabel];
         
         //other variables
+        [[SharedValues allValues] createColors];
         _colorsArray = [[SharedValues allValues] colorsArray];
         _gameStarted = false;
         _currentColor = nil;
         _lastColor = nil;
         
         
-        
-        
-        
+
     }
     
     return self;
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -113,12 +117,13 @@
             
             if ([_currentColor isEqual:[UIColor redColor]]) {
                 //put the score up and move on
-                //make a method to evaluate when score moved up to make game harder
                 
+                //update score
+                _score += 1;
+                _scoreLabel.text = [NSString stringWithFormat:@"%d", _score];
                 
-                
-                _lastRedNoTap = false;
-                
+                //other variables
+                _lastRedWasTapped = true;
                 
             } else {
                 
@@ -127,11 +132,17 @@
                 
             }
             
+        } else if ([[touchedNode name] isEqualToString:@"pauseButton"]) {
             
+            //pause button
+            
+        } else if ([[touchedNode name] isEqualToString:@"restartButton"]) {
+            
+            [_redCircle removeAllActions];
+            [self setupGame];
             
         }
         
-        //pause button
         
         
     } else {
@@ -139,20 +150,21 @@
         
         if ([[touchedNode name] isEqualToString:@"startButton"]) {
             
-            [self startGame];
+            [self setupGame];
             
+        } else if ([[touchedNode name] isEqualToString:@"settingsButton"]) {
+            
+            //settings button
+            SKTransition *transition = [SKTransition fadeWithDuration:.5];
+            [self.scene.view presentScene:_settingsScene transition:transition];
+            
+        } else if ([[touchedNode name] isEqualToString:@"playAgainButton"]) {
+            
+            [self setupGame];
             
         }
         
-        
-        //settings button
-        
-        
-        
     }
-    
-    
-    
     
 }
 
@@ -160,12 +172,29 @@
 - (void)setupGame {
     
     //start the game here
+   
     
-    //NEED A PAUSE BUTTON
-    __block BOOL x = true;
+    if (_playButton.parent) {
+        [_playButton removeFromParent];
+    }
+    
+    if (_playAgainButton.parent) {
+        [_playAgainButton removeFromParent];
+    }
+    
+    if (_itsRedButton.parent) {
+        [_itsRedButton removeFromParent];
+    }
+    
+    if (!_statusLabel.parent) {
+        [self addChild:_statusLabel];
+    }
+    
+    _redCircle.fillColor = [UIColor redColor];
     
     
-    [_playButton removeFromParent];
+    [_settingsButton removeFromParent];
+    
     
     //countdown timer
     SKAction *timer3 = [SKAction customActionWithDuration:1 actionBlock:^(SKNode *node, CGFloat elapsedTime) {
@@ -178,25 +207,21 @@
         _statusLabel.text = @"1";
         
     }];
-    SKAction *timerGo = [SKAction customActionWithDuration:1 actionBlock:^(SKNode *node, CGFloat elapsedTime) {
-        _statusLabel.text = @"Go!";
+    SKAction *timerGo = [SKAction runBlock:^{
         
-        if (x) {
-            [self startGame];
-            x = false;
-        }
-
+        _statusLabel.text = @"Go!";
+        [self startGame];
+        
     }];
     
     [_statusLabel runAction:[SKAction sequence:[NSArray arrayWithObjects:timer3, timer2, timer1, timerGo, nil]]];
     
     _score = 0;
+    _scoreLabel.text = @"0";
     
     //in seconds
     _pauseInterval = 2.0;
-    _lastRedNoTap = false;
-    
-    
+    _lastRedWasTapped = YES;
 
 }
 
@@ -214,24 +239,48 @@
     //add the its red button
     [self addChild:_itsRedButton];
     
+    if (!_restartButton.parent) {
+        [self addChild:_restartButton];
+    }
+    
+    
     //in seconds
-    _pauseInterval = 2.0;
+    _pauseInterval = 1.0;
     
     //add the game function here
     //MIGHT NOT UPDATE THE PAUSE DURATION HERE
     SKAction *pause = [SKAction waitForDuration:_pauseInterval];
     SKAction *changeColor = [SKAction runBlock:^{
+        
+        
         //get the one before change
         _lastColor = _redCircle.fillColor;
-        _redCircle.fillColor = [_colorsArray objectAtIndex:arc4random_uniform((int)[_colorsArray count])];
-        //get the current one after change
-        _currentColor = _redCircle.fillColor;
         
-        //evaluate here if the last color was red and if the user missed it or not
-        //if the last color was red and the user didn't tap it
-        if ([_lastColor isEqual:[UIColor redColor]] && _lastRedNoTap) {
+        
+        //see if the last color was red and wasn't clicked
+        if ([_lastColor isEqual:[UIColor redColor]] && !_lastRedWasTapped) {
+            
             [self gameOver];
+            
+        } else {
+            //if that's all set the continue to evaluate
+            
+            //make sure you don't get same color twice
+            UIColor *newColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
+            while ([_lastColor isEqual:newColor]) {
+                newColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
+            }
+            
+            _redCircle.fillColor = newColor;
+            
+            //get the current one after change
+            _currentColor = _redCircle.fillColor;
+            
+            _lastRedWasTapped = false;
+            
+            
         }
+        
         
     }];
     [_redCircle runAction:[SKAction repeatActionForever:[SKAction sequence:[NSArray arrayWithObjects:pause, changeColor, nil]]]];
@@ -242,6 +291,20 @@
 }
 
 - (void)gameOver {
+    
+    //when the game is over
+    _gameStarted = false;
+    
+    [_redCircle removeAllActions];
+    [_itsRedButton removeFromParent];
+    [_pauseButton removeFromParent];
+    [_restartButton removeFromParent];
+    [self addChild:_playAgainButton];
+    [self addChild:_settingsButton];
+    
+    
+    //add Game Center here
+    //overlay a solid colored background with score like 2048
     
     
     
