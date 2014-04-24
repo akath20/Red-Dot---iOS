@@ -223,6 +223,8 @@
 
     _lastRedWasTapped = YES;
     _notRedCount = 0;
+    _pauseInterval = .7;
+    _pauseAction.duration = 1;
 
 }
 
@@ -243,10 +245,6 @@
     if (!_restartButton.parent) {
         [self addChild:_restartButton];
     }
-    
-    
-    //in seconds
-    _pauseInterval = .7;
     
     //add the game function here
     //MIGHT NOT UPDATE THE PAUSE DURATION HERE
@@ -284,7 +282,8 @@
             }
             
             
-            if (_notRedCount >= 7) {
+            if (_notRedCount >= 13) {
+                //really 12 becuase starts at zero
                 //if it hasn't been red for 7 or more times, make it red and reset the count;
                 newColor = [UIColor redColor];
                 _notRedCount = 0;
@@ -305,6 +304,7 @@
                 if (!_pauseInterval <= .3) {
                     //if it's not less than 3 then change it
                     _pauseInterval -= .1;
+                    _pauseAction.duration = _pauseInterval;
                 }
                 
             }
@@ -312,8 +312,8 @@
             
         }
         
-        NSLog(@"/nPause Interval: %.1f", _pauseInterval);
-        NSLog(@"Not Red Count: %d", _notRedCount);
+        NSLog(@"/nPause Interval: %.1f, %.1f", _pauseInterval, _pauseAction.duration);
+        
         
         
     }];
