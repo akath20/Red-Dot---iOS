@@ -22,7 +22,7 @@
 @property int score;
 @property UIColor *currentColor;
 @property UIColor *lastColor;
-@property float pauseInterval;
+@property double pauseInterval;
 @property BOOL lastRedWasTapped;
 @property SKScene *settingsScene;
 @property SKSpriteNode *settingsButton;
