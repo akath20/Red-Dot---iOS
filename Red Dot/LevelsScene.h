@@ -27,5 +27,8 @@
 @property SKScene *settingsScene;
 @property SKSpriteNode *settingsButton;
 @property SKSpriteNode *restartButton;
+@property SKAction *changeColorAction;
+@property SKAction *pauseAction;
+@property int notRedCount;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "SettingsScene.h"
-#import "MainMenuScene.h"
+#import "LevelsScene.h"
 
 
 @implementation SettingsScene
@@ -122,9 +122,9 @@
 
     } else if ([[touchedNode name] isEqualToString:@"backButton"]) {
         
-        MainMenuScene *mainMenu = [[MainMenuScene alloc] initWithSize:self.scene.size];
+         LevelsScene *levelsScene = [[LevelsScene alloc] initWithSize:self.scene.size];
         SKTransition *transition = [SKTransition fadeWithDuration:.5];
-        [self.scene.view presentScene:mainMenu transition:transition];
+        [self.scene.view presentScene:levelsScene transition:transition];
         
         
     }

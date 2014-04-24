@@ -220,8 +220,9 @@
     _scoreLabel.text = @"0";
     
     //in seconds
-    _pauseInterval = 2.0;
+
     _lastRedWasTapped = YES;
+    _notRedCount = 0;
 
 }
 
@@ -245,12 +246,12 @@
     
     
     //in seconds
-    _pauseInterval = 1.0;
+    _pauseInterval = .7;
     
     //add the game function here
     //MIGHT NOT UPDATE THE PAUSE DURATION HERE
-    SKAction *pause = [SKAction waitForDuration:_pauseInterval];
-    SKAction *changeColor = [SKAction runBlock:^{
+    
+    _changeColorAction = [SKAction runBlock:^{
         
         
         //get the one before change
@@ -271,6 +272,25 @@
                 newColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
             }
             
+            
+            //make sure the game doesn't go forever without getting red, keep track
+            if (![newColor isEqual:[UIColor redColor]]) {
+                //if it's not red, up the count
+                _notRedCount += 1;
+                
+            } else {
+                //if it is red, restart the cout
+                _notRedCount = 0;
+            }
+            
+            
+            if (_notRedCount >= 7) {
+                //if it hasn't been red for 7 or more times, make it red and reset the count;
+                newColor = [UIColor redColor];
+                _notRedCount = 0;
+            }
+
+            
             _redCircle.fillColor = newColor;
             
             //get the current one after change
@@ -278,12 +298,44 @@
             
             _lastRedWasTapped = false;
             
+         
+            //change the time
+            if (_score%5 == 0 && !(_score == 0)) {
+                //if the score is up 5 and not 0
+                if (!_pauseInterval <= .3) {
+                    //if it's not less than 3 then change it
+                    _pauseInterval -= .1;
+                }
+                
+            }
+            
             
         }
         
+        NSLog(@"/nPause Interval: %.1f", _pauseInterval);
+        NSLog(@"Not Red Count: %d", _notRedCount);
+        
         
     }];
-    [_redCircle runAction:[SKAction repeatActionForever:[SKAction sequence:[NSArray arrayWithObjects:pause, changeColor, nil]]]];
+    _pauseAction = [SKAction waitForDuration:_pauseInterval];
+    
+    [self changeColor];
+    
+    
+    
+}
+
+- (void)changeColor {
+    
+    [_redCircle runAction:[SKAction sequence:[NSArray arrayWithObjects:_pauseAction, _changeColorAction, nil]] completion:^{
+        if (_gameStarted) {
+            //if game is still being played, repeat
+            [self changeColor];
+        }
+    }];
+    
+    
+    
     
     
     
