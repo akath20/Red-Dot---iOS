@@ -252,6 +252,7 @@
     _pauseInterval = .7;
     _pauseAction.duration = 1;
 
+
 }
 
 - (void)startGame {
@@ -263,7 +264,6 @@
     SKAction *wait = [SKAction waitForDuration:1];
     SKAction *removeFromParent = [SKAction removeFromParent];
     [_statusLabel runAction:[SKAction sequence:[NSArray arrayWithObjects:wait, removeFromParent, nil]]];
-    
     
     //add the its red button
     [self addChild:_itsRedButton];
@@ -323,14 +323,7 @@
             
             _lastRedWasTapped = false;
             
-            
-            
-            
         }
-        
-        NSLog(@"/nPause Interval: %.1f, %.1f", _pauseInterval, _pauseAction.duration);
-        
-        
         
     }];
     _pauseAction = [SKAction waitForDuration:_pauseInterval];
@@ -367,8 +360,21 @@
     [_itsRedButton removeFromParent];
     [_pauseButton removeFromParent];
     [_restartButton removeFromParent];
-    [self addChild:_playAgainButton];
     [self addChild:_settingsButton];
+    
+    //fade in the button so they don't accidently click it
+    _playAgainButton.alpha = 0.0;
+    SKAction *wait = [SKAction waitForDuration:1];
+    SKAction *addChild = [SKAction runBlock:^{
+        [self addChild:_playAgainButton];
+    }];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:.5];
+    
+    NSArray *allActions = [NSArray arrayWithObjects:wait, addChild, fadeIn, nil];
+    
+    SKAction *all = [SKAction sequence:allActions];
+    
+    [_playAgainButton runAction:all];
     
     
     //add Game Center here
