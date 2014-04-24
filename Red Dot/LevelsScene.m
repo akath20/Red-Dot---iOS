@@ -351,6 +351,18 @@
     
 }
 
+- (void)showButtons {
+    
+    _playAgainButton.alpha = 0;
+    _settingsButton.alpha = 0;
+    [self addChild:_playAgainButton];
+    [self addChild:_settingsButton];
+    [_playAgainButton runAction:[SKAction fadeInWithDuration:.5]];
+    [_settingsButton runAction:[SKAction fadeInWithDuration:.5]];
+    
+    
+}
+
 - (void)gameOver {
     
     //when the game is over
@@ -360,21 +372,10 @@
     [_itsRedButton removeFromParent];
     [_pauseButton removeFromParent];
     [_restartButton removeFromParent];
-    [self addChild:_settingsButton];
+    
     
     //fade in the button so they don't accidently click it
-    _playAgainButton.alpha = 0.0;
-    SKAction *wait = [SKAction waitForDuration:1];
-    SKAction *addChild = [SKAction runBlock:^{
-        [self addChild:_playAgainButton];
-    }];
-    SKAction *fadeIn = [SKAction fadeInWithDuration:.5];
-    
-    NSArray *allActions = [NSArray arrayWithObjects:wait, addChild, fadeIn, nil];
-    
-    SKAction *all = [SKAction sequence:allActions];
-    
-    [_playAgainButton runAction:all];
+    [self performSelector:@selector(showButtons) withObject:nil afterDelay:1];
     
     
     //add Game Center here
