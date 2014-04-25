@@ -71,6 +71,8 @@
         _scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), (_redCircle.position.y+circle.size.height)+40);
         _scoreLabel.text = @"";
         _scoreLabel.name = @"scoreLabel";
+        _scoreLabel.fontSize = 40;
+        _scoreLabel.fontName = @"AvenirNextCondensed-Heavy";
         [self addChild:_scoreLabel];
         
         
@@ -85,8 +87,9 @@
         _statusLabel = [[SKLabelNode alloc] init];
         _statusLabel.fontColor = [UIColor blackColor];
         _statusLabel.text = @"";
-        _statusLabel.fontSize = 18;
-        _statusLabel.position = CGPointMake(bottomPoint.x, bottomPoint.y+(_playButton.size.height/2)+25);
+        _statusLabel.position = CGPointMake(bottomPoint.x, bottomPoint.y+(_playButton.size.height/2)+35);
+        _statusLabel.fontName = @"AvenirNext-Bold";
+        _statusLabel.fontSize = 30;
         [self addChild:_statusLabel];
         
         //other variables
@@ -262,7 +265,6 @@
     }
     
     //add the game function here
-    //MIGHT NOT UPDATE THE PAUSE DURATION HERE
     
     _changeColorAction = [SKAction runBlock:^{
         
@@ -273,16 +275,16 @@
         
         //see if the last color was red and wasn't clicked
         if ([_lastColor isEqual:[UIColor redColor]] && !_lastRedWasTapped) {
-            
+
             [self gameOver];
             
         } else {
             //if that's all set the continue to evaluate
             
             //make sure you don't get same color twice
-            UIColor *newColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
+            UIColor *newColor = [_colorsArray objectAtIndex:arc4random_uniform((uint32_t)[_colorsArray count])];
             while ([_lastColor isEqual:newColor]) {
-                newColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
+                newColor = [_colorsArray objectAtIndex:arc4random_uniform((uint32_t)[_colorsArray count])];
             }
             
             

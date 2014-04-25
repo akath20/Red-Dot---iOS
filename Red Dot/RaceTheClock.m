@@ -129,7 +129,7 @@
         
         if (!_endOfGame) {
             //if it's note the end of the game
-            _redCircle.fillColor = [_colorsArray objectAtIndex:arc4random_uniform([_colorsArray count])];
+            _redCircle.fillColor = [_colorsArray objectAtIndex:arc4random_uniform((uint32_t)[_colorsArray count])];
         }
         
         if (_userStart) {

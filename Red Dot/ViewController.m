@@ -19,8 +19,11 @@
 
     // Configure the view.
     SKView *skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    
+    //hide the ad if using this
+//    skView.showsFPS = YES;
+//    skView.showsNodeCount = YES;
+    
     
     
     
@@ -62,7 +65,7 @@
     
     
     
-    NSString *emailBody = [NSString stringWithFormat:@"\n\r\n\r\n\riOS Version: %@\n\rDevice: %@\n\rApp Version: %@\n\rApp Name: Red Dot", [[UIDevice currentDevice] systemVersion], deviceType, [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]];
+    NSString *emailBody = [NSString stringWithFormat:@"\n\r\n\r\n\riOS Version: %@\n\rDevice: %@\n\rApp Version: %@\n\rApp Name: %@", [[UIDevice currentDevice] systemVersion], deviceType, [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"], [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
     [emailSheet setMessageBody:emailBody isHTML:NO];
     
     // Present the mail composition interface.
