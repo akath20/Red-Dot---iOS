@@ -135,11 +135,17 @@
                 //change the time
                 if (_score%5 == 0 && !(_score == 0)) {
                     //if the score is up 5 and not 0 and didn't already change for this number
-                    if (!_pauseInterval <= .425) {
-                        //if it's not less than 3 then change it
+                    
+                    
+                    
+                    if (!(_score > 20)) {
+                        //if the score isn't greater than 20
+                        //aka stop making faster after 20
+                        //which is ~.4 seconds
                         _pauseInterval -= .1;
                         _pauseAction.duration = _pauseInterval;
                     }
+                   
                 
                 }
                 
@@ -375,55 +381,6 @@
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
