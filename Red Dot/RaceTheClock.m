@@ -90,21 +90,6 @@
         _statusLabel.position = CGPointMake(bottomPoint.x, bottomPoint.y+(_startButton.size.height/2)+25);
         [self addChild:_statusLabel];
         
-        
-        //create the high score label
-        _highScoreLabel = [[SKLabelNode alloc] init];
-        _highScoreLabel.fontColor = [UIColor blackColor];
-        _highScoreLabel.text = [NSString stringWithFormat:@"High Score: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
-        _highScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), _timerTextLabel.position.y+30);
-        _highScoreLabel.fontSize = 16;
-        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"]) {
-            //if a score there
-            _highScoreLabel.hidden = false;
-        } else {
-            _highScoreLabel.hidden = true;
-        }
-        [self addChild:_highScoreLabel];
-        
 
         //other variables
         _currentlyPlaying = false;
@@ -253,32 +238,32 @@
         
         //get the time as a value
         
-        double time = [_timerLabel.text doubleValue];
+//        double time = [_timerLabel.text doubleValue];
         
-        if ((time < [[[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"] doubleValue]) || (![[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"])) {
-            //if beat high score or there is no high score on file
-            
-            //put in the save file
-            [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] setObject:[NSString stringWithFormat:@"%f", time] forKey:@"raceTheClock"];
-            
-            //update the text and make sure it's showing
-            _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
-            _highScoreLabel.hidden = false;
-            
-            //tell the user of their new time
-            _statusLabel.text = @"New Fastest Time!";
-            
-            
-            
-            
-        } else {
-            //if didn't beat high score
-            
-            //update the text and make sure it's showing
-            _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
-            _highScoreLabel.hidden = false;
-            
-        }
+//        if ((time < [[[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"] doubleValue]) || (![[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] objectForKey:@"raceTheClock"])) {
+//            //if beat high score or there is no high score on file
+//            
+//            //put in the save file
+//            [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"] setObject:[NSString stringWithFormat:@"%f", time] forKey:@"raceTheClock"];
+//            
+//            //update the text and make sure it's showing
+//            _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
+//            _highScoreLabel.hidden = false;
+//            
+//            //tell the user of their new time
+//            _statusLabel.text = @"New Fastest Time!";
+//            
+//            
+//            
+//            
+//        } else {
+//            //if didn't beat high score
+//            
+//            //update the text and make sure it's showing
+//            _highScoreLabel.text = [NSString stringWithFormat:@"Fastest Time: %@", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] objectForKey:@"raceTheClock"]];
+//            _highScoreLabel.hidden = false;
+//            
+//        }
         
         
         

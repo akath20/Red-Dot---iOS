@@ -10,7 +10,7 @@
 #import "MainMenuScene.h"
 #import "RaceTheClock.h"
 
-#define HighScores [[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"]
+
 
 @implementation GameModeScene
 
@@ -61,13 +61,6 @@
         bottomLine.fontColor = [UIColor blackColor];
         NSString *topText = @"Fastest Time:";
         NSString *bottomText = [[NSString alloc] init];
-        if ([HighScores objectForKey:@"raceTheClock"]) {
-            //if score on hand
-            bottomText = [[HighScores objectForKey:@"raceTheClock"] stringValue];
-        } else {
-            //if no valid score on hand
-            bottomText = @"N/A";
-        }
         bottomLine.position = CGPointMake(bottomLine.position.x, bottomLine.position.y - 20);
         topLine.text = topText;
         bottomLine.text = bottomText;

@@ -14,33 +14,10 @@
 {
     // Override point for customization after application launch.
     
-    //set up the high score is they arn't there alread
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"highScores"]) {
-        
-        NSMutableDictionary *highScoresDic = [[NSMutableDictionary alloc] init];
-        [[NSUserDefaults standardUserDefaults] setObject:highScoresDic forKey:@"highScores"];
-        
-        /*
-         
-         STORE AS STRINGS AND RETRIEVE AS FLOATS
-         
-         
-          Current Names for High Score Games
-         
-         raceTheClock
-         
-         
-         
-         
-         
-         
-         */
-    }
+   
     
     
     return YES;
-
-
 }
 
 

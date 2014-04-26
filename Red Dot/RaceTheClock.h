@@ -23,7 +23,6 @@
 @property (strong, nonatomic) NSTimer *stopWatchTimer; 
 @property (strong, nonatomic) NSDate *startDate;
 @property SKLabelNode *statusLabel;
-@property SKLabelNode *highScoreLabel;
 @property NSArray *colorsArray;
 
 @end
