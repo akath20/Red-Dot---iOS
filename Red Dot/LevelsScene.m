@@ -231,14 +231,15 @@
         _statusLabel.text = @"1";
         
     }];
-    SKAction *timerGo = [SKAction runBlock:^{
+    SKAction *startGame = [SKAction runBlock:^{
         
-        _statusLabel.text = @"Go!";
         [self startGame];
         
     }];
     
-    [_statusLabel runAction:[SKAction sequence:[NSArray arrayWithObjects:timer3, timer2, timer1, timerGo, nil]]];
+    [_statusLabel removeAllActions];
+    
+    [_statusLabel runAction:[SKAction sequence:[NSArray arrayWithObjects:timer3, timer2, timer1, startGame, nil]]];
     
     _score = 0;
     _scoreLabel.text = @"0";
@@ -257,11 +258,6 @@
     
     
     _gameStarted = true;
-    
-    //remove status label
-    SKAction *wait = [SKAction waitForDuration:1];
-    SKAction *removeFromParent = [SKAction removeFromParent];
-    [_statusLabel runAction:[SKAction sequence:[NSArray arrayWithObjects:wait, removeFromParent, nil]]];
     
     //add the its red button
     [self addChild:_itsRedButton];
@@ -311,6 +307,12 @@
                 newColor = [UIColor redColor];
                 _notRedCount = 0;
             }
+            
+            
+            if (_firstRun && [newColor isEqual:[UIColor redColor]]) {
+                //if its the first run, make sure it's not red to confuse the user
+                newColor = [UIColor blueColor];
+            }
 
             
             _redCircle.fillColor = newColor;
@@ -323,9 +325,24 @@
         }
         
     }];
+    
     _pauseAction = [SKAction waitForDuration:_pauseInterval];
     
+    _firstRun = true;
+    
     [self changeColor];
+    
+    [_statusLabel runAction:[SKAction runBlock:^{
+        _statusLabel.text = @"GO!";
+    }]];
+    
+    
+    
+    
+    //remove status label
+    SKAction *wait = [SKAction waitForDuration:1];
+    SKAction *removeFromParent = [SKAction removeFromParent];
+    [_statusLabel runAction:[SKAction sequence:[NSArray arrayWithObjects:wait, removeFromParent, nil]]];
     
     
     
@@ -333,12 +350,35 @@
 
 - (void)changeColor {
     
-    [_redCircle runAction:[SKAction sequence:[NSArray arrayWithObjects:_pauseAction, _changeColorAction, nil]] completion:^{
-        if (_gameStarted) {
-            //if game is still being played, repeat
-            [self changeColor];
-        }
-    }];
+    if (_firstRun) {
+        
+        //if first run, DONT PAUSE AT FIRST
+        
+        
+        [_redCircle runAction:[SKAction sequence:[NSArray arrayWithObjects:_changeColorAction, nil]] completion:^{
+            if (_gameStarted) {
+                //if game is still being played, repeat
+                [self changeColor];
+            }
+        }];
+        
+        _firstRun = false;
+        
+    } else {
+        
+        //if not first run, PAUSE
+        
+        [_redCircle runAction:[SKAction sequence:[NSArray arrayWithObjects:_pauseAction, _changeColorAction, nil]] completion:^{
+            if (_gameStarted) {
+                //if game is still being played, repeat
+                [self changeColor];
+            }
+        }];
+        
+    }
+    
+    
+    
     
     
     
@@ -369,6 +409,10 @@
     [_itsRedButton removeFromParent];
     [_pauseButton removeFromParent];
     [_restartButton removeFromParent];
+    
+    if (_statusLabel.parent) {
+        [_statusLabel removeFromParent];
+    }
     
     
     //fade in the button so they don't accidently click it

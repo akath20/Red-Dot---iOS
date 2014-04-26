@@ -30,5 +30,6 @@
 @property SKAction *changeColorAction;
 @property SKAction *pauseAction;
 @property int notRedCount;
+@property BOOL firstRun;
 
 @end
