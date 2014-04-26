@@ -36,9 +36,21 @@
         devByLabel.fontSize = 20;
         devByLabel.text = @"Developed by: Alex Atwater";
         devByLabel.fontName = @"System Bold";
-        devByLabel.position = CGPointMake(CGRectGetMidX(self.frame), 380+yOffset);
+        devByLabel.position = CGPointMake(CGRectGetMidX(self.frame), 380+yOffset+30);
         devByLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         [self addChild:devByLabel];
+        
+        //add nick idea by label
+        SKLabelNode *gameByNick = [[SKLabelNode alloc] init];
+        gameByNick.fontColor = [UIColor blackColor];
+        gameByNick.fontSize = 20;
+        gameByNick.text = @"Game Idea by: Nick Daponte";
+        gameByNick.fontName = @"System Bold";
+        gameByNick.position = CGPointMake(CGRectGetMidX(self.frame), 380+yOffset);
+        gameByNick.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+        [self addChild:gameByNick];
+        
+        
         
         //add version label
         SKLabelNode *versionLabel = [[SKLabelNode alloc] init];
@@ -46,7 +58,7 @@
         versionLabel.fontSize = 20;
         versionLabel.text = [NSString stringWithFormat:@"Version: %@", [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]];
         versionLabel.fontName = @"System";
-        versionLabel.position = CGPointMake(CGRectGetMidX(self.frame), 350+yOffset);
+        versionLabel.position = CGPointMake(CGRectGetMidX(self.frame), 350+yOffset-10);
         versionLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         [self addChild:versionLabel];
         

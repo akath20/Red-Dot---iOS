@@ -67,6 +67,7 @@
     
     NSString *emailBody = [NSString stringWithFormat:@"\n\r\n\r\n\riOS Version: %@\n\rDevice: %@\n\rApp Version: %@\n\rApp Name: %@", [[UIDevice currentDevice] systemVersion], deviceType, [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"], [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
     [emailSheet setMessageBody:emailBody isHTML:NO];
+    [emailSheet setToRecipients:[NSArray arrayWithObject:@"akath20@gmail.com"]];
     
     // Present the mail composition interface.
     [self presentViewController:emailSheet animated:true completion:nil];
